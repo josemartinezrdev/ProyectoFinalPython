@@ -86,15 +86,15 @@ def add_activos():
         return True
 
 
-def edit_activos():
-    pass
+# def edit_activos():
+#     pass
 
 
-def delete_activos():
-    pass
+# def delete_activos():
+#     pass
 
 
-def search_activos():
-    pass
+# def search_activos():
+#     pass
 
 

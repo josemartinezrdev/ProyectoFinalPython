@@ -18,24 +18,30 @@ def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
 
-def updateData(data,srcData):
-    if (len(data) <=0):
+def edit_file_apz(nombre, src, inventario):
+    if nombre == 'ACTIVOS':
+        src = inventario.get()
+    elif nombre == 'PERSONAL':
+        pass
+    elif nombre == 'ZONAS':
+        pass
+    if (len(src) <=0):
         print('😎 No se encontró información 😎')
         os.system('pause')
     else:
-        for key in data.keys():
+        for key in src.keys():
             if(key != 'nit'):
-                if(type(data[key]) == dict):
-                    for key2 in data[key].keys():
+                if(type(src[key]) == dict):
+                    for key2 in src[key].keys():
                         if(bool(input(f'Desea modificar el {key2} s(si) o Enter No'))):
                             os.system('cls')
-                            data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
+                            src[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
                 else:
                     if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
                         os.system('cls')
-                        data[key] = input(f'Ingrese el nuevo valor para {key} :')
-        srcData['proveedores'].update({data['nit']:data})
-        ('inventario.json',srcData)
+                        src[key] = input(f'Ingrese el nuevo valor para {key} :')
+        inventario['proveedores'].update({src['nit']:src})
+        ('inventario.json',inventario)
     os.system('pause')
 
 

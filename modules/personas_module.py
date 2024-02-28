@@ -34,16 +34,16 @@ def add_personas():
     cf.update_file('inventario.json', inventario)
 
 
-def edit_personas():
-    pass
+# def edit_personas():
+#     pass
 
 
-def delete_personas():
-    pass
+# def delete_personas():
+#     pass
 
 
-def search_personas():
-    pass
+# def search_personas():
+#     pass
 
 
 #' Usar este código cuando necesite añadir o editar el estado.

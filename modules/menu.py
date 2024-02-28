@@ -102,6 +102,17 @@ def create_menu_apz(nombre:str, inventario:dict):
             elif nombre == 'ZONAS':
                 # zom.add_zonas()
                 pass
+
+        elif opt == '2':
+            if nombre == 'ACTIVOS':
+                acm.edit_file_apz()
+                return True
+            elif nombre == 'PERSONAL':
+                pem.add_personas()
+                return True
+            elif nombre == 'ZONAS':
+                # zom.add_zonas()
+                pass
         
         elif opt == '5':
             return True

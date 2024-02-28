@@ -25,7 +25,7 @@ def add_zonas():
 
     return True
 
-def edit_zonas():
+
 
     inventario = cf.read_file(cf.BASE+'inventario.json')
 
