@@ -20,7 +20,7 @@ def add_zonas():
         'Capacidad Zona': capacidad_zona
     }
 
-    inventario.get('activos').update({nro_zona:zona})
+    inventario.get('zonas').update({nro_zona:zona})
     cf.update_file('inventario.json', inventario)
 
     return True
