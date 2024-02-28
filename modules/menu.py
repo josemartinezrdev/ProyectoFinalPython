@@ -1,6 +1,7 @@
 from tabulate import tabulate
 import modules.activos_module as acm
 import modules.personas_module as pem
+import modules.zonas_module as zom
 import modules.asignacion_module as asm
 
 
@@ -98,8 +99,17 @@ def create_menu_apz(nombre:str, inventario:dict):
                 pem.add_personas()
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                # zom.add_zonas()
-                pass
+                zom.add_zonas()
+
+        elif opt == '2':
+            if nombre == 'ACTIVOS':
+                acm.edit_file_apz()
+                return True
+            elif nombre == 'PERSONAL':
+                pem.add_personas()
+                return True
+            elif nombre == 'ZONAS':
+                zom.add_zonas()
         elif opt == '5':
             create_menu(inventario)
     return True
