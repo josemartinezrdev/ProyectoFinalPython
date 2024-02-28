@@ -15,14 +15,13 @@ def read_file(archivo: str):
         inventario = json.load(rf)
     return inventario
 
-
 def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
 
 
-# def update_data(archivo: str, data):
-#     pass
+def update_data(archivo: str, data):
+    pass
 
 def edit_zonas(data,srcData):  #-> memorize this
     if (len(data) <=0):

@@ -11,22 +11,22 @@ def add_zonas():
     clear_screen()
     nombre_zona = input('Ingrese el nombre de la zona: ')
     clear_screen()
-    capacidad_zona = input('Ingrese la capacidad de la zona: ')
+    capacidad_zona = input('Ingrese la capacidad de la zona')
     clear_screen()
 
     zona = {
-        'Nro Zona': nro_zona,
-        'Nombre Zona': nombre_zona,
-        'Capacidad Zona': capacidad_zona
+        'nro_zona': nro_zona,
+        'nombre_zona': nombre_zona,
+        'capacidad_zona': capacidad_zona
     }
 
-    inventario.get('zonas').update({nro_zona:zona})
+    inventario.get('activos').update({nro_zona:zona})
     cf.update_file('inventario.json', inventario)
 
     return True
 
-# def edit_zonas():
+def edit_zonas():
 
-#     inventario = cf.read_file(cf.BASE+'inventario.json')
+    inventario = cf.read_file(cf.BASE+'inventario.json')
 
     # if (len(data))

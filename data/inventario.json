@@ -59,6 +59,16 @@
             "valor": "fgfg",
             "empresa_resp": "fgfg",
             "tipo": "fgf"
+        },
+        "1": {
+            "nro_zona": "1",
+            "nombre_zona": "apolo",
+            "capacidad_zona": "33"
+        },
+        "dfd": {
+            "nro_zona": "dfd",
+            "nombre_zona": "fdf",
+            "capacidad_zona": "df"
         }
     },
     "personal": {
@@ -81,5 +91,11 @@
             "tel_oficina": "sd"
         }
     },
-    "zonas": {}
+    "zonas": {
+        "fgfg": {
+            "nro_zona": "fgfg",
+            "nombre_zona": "ggfg",
+            "capacidad_zona": "fgf"
+        }
+    }
 }
