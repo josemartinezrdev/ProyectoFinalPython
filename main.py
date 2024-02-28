@@ -13,9 +13,5 @@ if __name__ == "__main__":
 
     cf.check_file("inventario.json",inventario)
 
-    isRunning = True
-    while isRunning:
-        
-        acm.clear_screen()
-        o = mn.create_menu(inventario)
-        isRunning = o
+    acm.clear_screen()
+    mn.create_menu(inventario)
