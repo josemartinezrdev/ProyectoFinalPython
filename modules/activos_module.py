@@ -1,6 +1,7 @@
 import os, sys
 import modules.core_files as cf
 
+#AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
 def clear_screen():
     if sys.platform == "linux" or sys.platform == "darwin":
@@ -85,15 +86,15 @@ def add_activos():
         return True
 
 
-def edit_activos():
-    pass
+# def edit_activos():
+#     pass
 
 
-def delete_activos():
-    pass
+# def delete_activos():
+#     pass
 
 
-def search_activos():
-    pass
+# def search_activos():
+#     pass
 
 
