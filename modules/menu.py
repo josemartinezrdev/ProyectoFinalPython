@@ -38,24 +38,21 @@ def create_menu(inventario:dict):
     else:
         if opt == '1':
             nombre = 'ACTIVOS'
-            o = create_menu_apz(nombre, inventario)
-            return o
+            create_menu_apz(nombre, inventario)
         elif opt == '2':
             nombre = 'PERSONAL'
-            o = create_menu_apz(nombre, inventario)
-            return o
+            create_menu_apz(nombre, inventario)
         elif opt == '3':
             nombre = 'ZONAS'
-            o = create_menu_apz(nombre, inventario)
-            return o
+            create_menu_apz(nombre, inventario)
         elif opt == '4':
-            create_menu_asignar()
+            create_menu_asignar(inventario)
         elif opt == '5':
             create_menu_reportes()
         elif opt == '6':
             create_menu_movimientos()
         elif opt == '7':
-            return False
+            return
 
 
 def create_menu_apz(nombre:str, inventario:dict):
@@ -115,15 +112,44 @@ def create_menu_apz(nombre:str, inventario:dict):
                 pass
         
         elif opt == '5':
-            return True
+            create_menu(inventario)
     return True
 
 def create_menu_zonas():
     pass
 
 
-def create_menu_asignar():
-    pass
+def create_menu_asignar(inventario:dict):
+    acm.clear_screen()
+    title = f"""
+    ++++++++++++++++++++++++++++
+    +       MENÚ ASIGNACIÓN    +
+    ++++++++++++++++++++++++++++
+    """
+    options = ['1', '2', '3']
+    
+    print(title)
+
+    opts = (['1', 'CREAR ASIGNACION'], ['2', 'BUSCAR'], ['3', 'REGRESAR AL MENU PRINCIPAL'])
+    print(tabulate(opts, tablefmt='grid'))
+
+    opt = input('Ingrese la opción:\n-> ')
+    if opt not in options:
+        acm.clear_screen()
+        print(f'La opción ({opt}) ingresada no es valida')
+        acm.pause_screen()
+        acm.clear_screen()
+        create_menu_asignar(inventario)
+    else:
+        if opt=='1':
+            pass
+        elif opt=='2':
+            pass
+        elif opt=='3':
+            create_menu(inventario)
+        
+
+    
 
 
 def create_menu_reportes():
