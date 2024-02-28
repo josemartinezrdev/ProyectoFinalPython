@@ -1,4 +1,3 @@
-import os, sys
 import modules.core_files as cf
 
 def add_personas():
