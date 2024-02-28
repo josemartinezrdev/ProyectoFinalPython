@@ -8,7 +8,8 @@ if __name__ == "__main__":
     inventario = {
         'activos': {},
         'personal': {},
-        'zonas': {}
+        'zonas': {},
+        'asignacion': {}
     }
 
     cf.check_file("inventario.json",inventario)
