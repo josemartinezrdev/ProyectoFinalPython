@@ -1,6 +1,7 @@
 import os, sys
 import modules.core_files as cf
 
+#AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
 def clear_screen():
     if sys.platform == "linux" or sys.platform == "darwin":
