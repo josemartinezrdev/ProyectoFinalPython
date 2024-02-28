@@ -95,3 +95,5 @@ def delete_activos():
 
 def search_activos():
     pass
+
+
