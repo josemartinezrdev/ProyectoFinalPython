@@ -11,15 +11,9 @@ inventario = {
 }
 
 def main():
+    acm.clear_screen()
     cf.check_file("inventario.json",inventario)
     create_menu(cf.read_file("inventario.json"))
-
-    isRunning = True
-    while isRunning:
-        
-        acm.clear_screen()
-        o = create_menu(inventario)
-        isRunning = o
-
+    acm.clear_screen()
 if __name__ == "__main__":
     main()

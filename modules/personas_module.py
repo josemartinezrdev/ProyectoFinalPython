@@ -12,7 +12,7 @@ def add_personas():
     if opt == "1":
         tipo = 'Natural'
     elif opt == "2":
-        tipo = "Jurídica"
+        tipo = "Juridica"
     clear_screen()
     name = input('Ingrese nombre de la persona\n-> ')
     clear_screen()

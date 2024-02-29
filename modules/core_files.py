@@ -21,6 +21,26 @@ def update_file(archivo, data):
 
 # FUNCIONES APZ
 
+# def updateData(data,srcData):
+#     if (len(data) <=0):
+#         print('😎 No se encontró información 😎')
+#         os.system('pause')
+#     else:
+#         for key in data.keys():
+#             if(key != 'nit'):
+#                 if(type(data[key]) == dict):
+#                     for key2 in data[key].keys():
+#                         if(bool(input(f'Desea modificar el {key2} s(si) o Enter No'))):
+#                             os.system('cls')
+#                             data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
+#                 else:
+#                     if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
+#                         os.system('cls')
+#                         data[key] = input(f'Ingrese el nuevo valor para {key} :')
+#         srcData['proveedores'].update({data['nit']:data})
+#         UpdateFile('inventario.json',srcData)
+#     os.system('pause')
+
 def edit_file_apz(nombre):
 
     if nombre == 'ACTIVOS':
@@ -40,17 +60,24 @@ def edit_file_apz(nombre):
 
             for key, value in data.items():
                 if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'Nro Zona', 'Ex CPU', 'Ex MON', 'Ex MOU', 'Ex TEC']:
-                    if input(f'Desea modificar {key}? s(si) / Enter(no)\n-> ').lower() == 's':
-                        os.system('cls')
-                        nuevo_valor = input(f'Ingrese el nuevo valor para {key}:\n-> ')
-                        os.system('cls')
-                        data[key] = nuevo_valor
+                    if type(data[key]) == dict:
+                        if(type(data[key]) == dict):
+                            for key2 in data[key].keys():
+                                if input(f'Desea modificar el {key2}? s(si) / Enter(no)\n-> ').lower() == 's':
+                                    os.system('cls')
+                                    data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
+                                    os.system('cls')
+                    else:
+                        if input(f'Desea modificar el {key}? s(si) / Enter(no)\n-> ').lower() == 's':
+                            os.system('cls')
+                            data[key] = input(f'Ingrese el nuevo valor para {key}:\n-> ')
+                            os.system('cls')
 
             inventario[nombre.lower()][palabra] = data
             update_file('inventario.json', inventario)
+            os.system('pause')
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
-            os.system('pause')
 
 def buscar_zona():
 
@@ -61,7 +88,6 @@ def buscar_zona():
     nro_zona,nombre_zona,capacidad_zona,  = result.values()
     print(f'{result}')
     os.system('pause')
-
 
 def delete_data_apz(nombre):
 

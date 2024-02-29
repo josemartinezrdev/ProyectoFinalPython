@@ -6,7 +6,7 @@ def validar_Nasignacion():
     inventario = cf.read_file('inventario.json')
     try:
         numero_asignacion = int(input('Ingrese el numero de la asignacion: '))
-        if numero_asignacion in inventario['asignacion'] :
+        if numero_asignacion in inventario['asignaciones'] :
             print('El numero de asignacion ya se encuentra reguistrado')
             pause_screen()
             clear_screen()
@@ -25,7 +25,7 @@ def validar_Nasignacion():
     return numero_asignacion
 
 
-# valida el tipo de asignacion
+# valida el tipo de asignaciones
 def val_tipo_asignacion():
      
     try:
@@ -48,7 +48,7 @@ def val_tipo_asignacion():
         pause_screen()
         clear_screen()
         val_tipo_asignacion()
-#valida el id de la persona que adquiere el activo
+#valida el id de la persona que adquiere el activo (Falso positivo)
 def validar_id():
     inventario = cf.read_file('inventario.json') 
     id_persona=input('Ingrese el Id de la persona')
@@ -88,7 +88,7 @@ def agregar_asignacion():
         id= validar_zona_asignada()
         nombre= inventario['zonas'][id]['Nombre Zona']
 
-    # NO SE DEBE PERMITIR ASIGNAR ACTIVOS QUE SE ENCUENTREN DADOS DE BAJA
+    # NO SE DEBE PERMITIR ASIGNAR ACTIVOS(FALSOS POSITIVOS) QUE SE ENCUENTREN DADOS DE BAJA
     # PARA ASIGNAR UN EQUIPO ESTE DEBE ESTAR EN ESTADO NO ASIGNADO.
 
     asignacion={

@@ -5,16 +5,14 @@ import modules.zonas_module as zom
 import modules.core_files as cf
 import modules.asignacion_module as asm
 
-data_inventario={}
-
 def create_menu(inventario:dict):
+    acm.clear_screen()
     title = """
 ++++++++++++++++++++++++++++++++++++
 +  SISTEMA DE G & C DE INVENTARIO  +
 ++++++++++++++++++++++++++++++++++++
 """
 
-    # opts = """
     # 1. ACTIVOS #¿ Jose
     # 2. PERSONAL #¿ Jose
     # 3. ZONAS #¡ Danna
@@ -22,7 +20,6 @@ def create_menu(inventario:dict):
     # 5. REPORTES #- Eliza
     # 6. MOVIMIENTOS DE ACTIVOS #¡ Danna
     # 7. SALIR #¿ Jose
-    # """
 
     acm.clear_screen()
     print(title)
@@ -31,7 +28,6 @@ def create_menu(inventario:dict):
     print(tabulate(opts, tablefmt='grid'))
 
     options = ['1', '2', '3', '4', '5', '6', '7', ]
-
 
     opt = input('Ingrese la opción:\n-> ')
     if opt not in options:
@@ -44,21 +40,26 @@ def create_menu(inventario:dict):
         if opt == '1':
             nombre = 'ACTIVOS'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '2':
             nombre = 'PERSONAL'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '3':
             nombre = 'ZONAS'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '4':
             create_menu_asignar(inventario)
+            create_menu(inventario)
         elif opt == '5':
             create_menu_reportes()
+            create_menu(inventario)
         elif opt == '6':
             create_menu_movimientos()
+            create_menu(inventario)
         elif opt == '7':
             return
-
 
 def create_menu_apz(nombre:str, inventario:dict):
     acm.clear_screen()
@@ -68,13 +69,12 @@ def create_menu_apz(nombre:str, inventario:dict):
     ++++++++++++++++++++++++++++
     """
 
-    # opts = """
     # 1. AGREGAR
     # 2. EDITAR
     # 3. ELIMINAR
     # 4. BUSCAR
     # 5. REGRESAR
-    # """
+
     options = ['1', '2', '3', '4', '5']
     
     print(title)
@@ -102,26 +102,42 @@ def create_menu_apz(nombre:str, inventario:dict):
                 pem.add_personas()
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                zom.add_zonas()
+                zom.validar_nZona()
                 create_menu_apz(nombre, inventario)
 
         elif opt == '2':
             if nombre == 'ACTIVOS':
                 cf.edit_file_apz(nombre)
+                create_menu_apz(nombre, inventario)
             elif nombre == 'PERSONAL':
                 cf.edit_file_apz(nombre)
+                create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
                 cf.edit_file_apz(nombre)
+                create_menu_apz(nombre, inventario)
 
         elif opt == '3':
             if nombre == 'ACTIVOS':
                 cf.delete_data_apz(nombre)
-                return True
+                create_menu_apz(nombre, inventario)
             elif nombre == 'PERSONAL':
                 cf.delete_data_apz(nombre)
-                return True
+                create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
                 cf.delete_data_apz(nombre)
+                create_menu_apz(nombre, inventario)
+
+        elif opt == '4':
+            if nombre == 'ACTIVOS':
+                # cf.search_data_apz(nombre)
+                pass
+            elif nombre == 'PERSONAL':
+                # cf.search_data_apz(nombre)
+                pass
+            elif nombre == 'ZONAS':
+                # cf.delete_data_apz(nombre)
+                pass
+
         elif opt == '5':
             pass
     return True
@@ -158,14 +174,9 @@ def create_menu_asignar(inventario:dict):
             pass
         elif opt=='3':
             create_menu(inventario)
-        
-
-    
-
 
 def create_menu_reportes():
     pass
-
 
 def create_menu_movimientos():
     pass
