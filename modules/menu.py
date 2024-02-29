@@ -2,6 +2,7 @@ from tabulate import tabulate
 import modules.activos_module as acm
 import modules.personas_module as pem
 import modules.zonas_module as zom
+import modules.core_files as cf
 
 
 def create_menu(inventario:dict):
@@ -40,18 +41,24 @@ def create_menu(inventario:dict):
         if opt == '1':
             nombre = 'ACTIVOS'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '2':
             nombre = 'PERSONAL'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '3':
             nombre = 'ZONAS'
             create_menu_apz(nombre, inventario)
+            create_menu(inventario)
         elif opt == '4':
             create_menu_asignar(inventario)
+            create_menu(inventario)
         elif opt == '5':
             create_menu_reportes()
+            create_menu(inventario)
         elif opt == '6':
             create_menu_movimientos()
+            create_menu(inventario)
         elif opt == '7':
             return
 
@@ -102,19 +109,16 @@ def create_menu_apz(nombre:str, inventario:dict):
 
         elif opt == '2':
             if nombre == 'ACTIVOS':
-                acm.edit_file_apz()
+                cf.edit_file_apz(nombre)
                 return True
             elif nombre == 'PERSONAL':
-                pem.add_personas()
+                cf.edit_file_apz(nombre)
                 return True
             elif nombre == 'ZONAS':
-                zom.add_zonas()
+                cf.edit_file_apz(nombre)
         elif opt == '5':
             create_menu(inventario)
     return True
-
-def create_menu_zonas():
-    pass
 
 
 def create_menu_asignar(inventario:dict):

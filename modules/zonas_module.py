@@ -1,11 +1,10 @@
-import os, sys
 import modules.core_files as cf
-from activos_module import clear_screen, pause_screen
+from modules.activos_module import clear_screen
 
 
 def add_zonas():
 
-    inventario = cf.read_file(cf.BASE+'inventario.json')
+    inventario = cf.read_file('inventario.json')
 
     nro_zona = input('Ingrese el número de la zona: ')
     clear_screen()
@@ -23,7 +22,7 @@ def add_zonas():
     inventario.get('zonas').update({nro_zona:zona})
     cf.update_file('inventario.json', inventario)
 
-    return True
+    return
 
 # def edit_zonas():
 

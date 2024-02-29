@@ -1,101 +1,38 @@
 {
     "activos": {
-        "PC-CAMPUS-1": {
-            "cod_campus": "campus2024",
-            "cod_transaccion": "camper2000",
+        "1005184428": {
+            "cod_campus": "1005184428",
+            "cod_transaccion": "0909",
             "nro_formulario": "1",
-            "nro_serial": "1096195872",
+            "nro_serial": "879809",
             "name_activo": "PC-CAMPUS-1",
-            "ubicacion_activo": "Sputnik",
+            "ubicacion_activo": "Apolo",
             "marca": "COMPUMAX",
             "categoria": "Equipo de computo",
             "estado": "no_asignado",
-            "proveedor": "123",
-            "valor": "3000000",
+            "proveedor": "1096195872",
+            "valor": "500000",
             "empresa_resp": "Campuslands",
-            "tipo": "Monitor"
-        },
-        "PC-CAMPUS-2": {
-            "cod_campus": "campus2024",
-            "cod_transaccion": "camper2000",
-            "nro_formulario": "2",
-            "nro_serial": "1005184428",
-            "name_activo": "PC-CAMPUS-2",
-            "ubicacion_activo": "Apolo",
-            "marca": "LG",
-            "categoria": "Equipo de computo",
-            "estado": "no_asignado",
-            "proveedor": "123",
-            "valor": "4000000",
-            "empresa_resp": "Campuslands",
-            "tipo": "Monitor"
-        },
-        "gfg": {
-            "cod_campus": "fgfdgf",
-            "cod_transaccion": "fgfg",
-            "nro_formulario": "fgfg",
-            "nro_serial": "fgfg",
-            "name_activo": "gfg",
-            "ubicacion_activo": "fgfg",
-            "marca": "fgf",
-            "categoria": "dfd",
-            "estado": "no_asignado",
-            "proveedor": "123",
-            "valor": "13",
-            "empresa_resp": "fgfg",
-            "tipo": "gfff"
-        },
-        "fgfg": {
-            "cod_campus": "fgdfg",
-            "cod_transaccion": "fgfg",
-            "nro_formulario": "fgfg",
-            "nro_serial": "fgfgf",
-            "name_activo": "fgfg",
-            "ubicacion_activo": "fgfgf",
-            "marca": "fgfg",
-            "categoria": "fgf",
-            "estado": "no_asignado",
-            "proveedor": "Jose",
-            "valor": "fgfg",
-            "empresa_resp": "fgfg",
-            "tipo": "fgf"
-        },
-        "1": {
-            "nro_zona": "1",
-            "nombre_zona": "apolo",
-            "capacidad_zona": "33"
-        },
-        "dfd": {
-            "nro_zona": "dfd",
-            "nombre_zona": "fdf",
-            "capacidad_zona": "df"
+            "tipo": "Computador de mesa"
         }
     },
     "personal": {
-        "123": {
-            "id": "123",
-            "name": "Jose",
+        "1096195872": {
+            "id": "1096195872",
+            "name": "Julian Perez",
             "email": "jose@gmail.com",
             "tel_movil": "3166791419",
-            "tel_casa": "334566",
-            "tel_personal": "3166791419",
-            "tel_oficina": "445566"
-        },
-        "sdds": {
-            "id": "sdds",
-            "name": "sdsd",
-            "email": "sdsd",
-            "tel_movil": "sdsd",
-            "tel_casa": "sds",
-            "tel_personal": "sds",
-            "tel_oficina": "sd"
+            "tel_casa": "3166791419",
+            "tel_personal": "3163960490",
+            "tel_oficina": "090908"
         }
     },
     "zonas": {
-        "fgfg": {
-            "nro_zona": "fgfg",
-            "nombre_zona": "ggfg",
-            "capacidad_zona": "fgf"
+        "1": {
+            "Nro Zona": "1",
+            "Nombre Zona": "Artemis",
+            "Capacidad Zona": "36"
         }
-    }
+    },
+    "asignaciones": {}
 }
