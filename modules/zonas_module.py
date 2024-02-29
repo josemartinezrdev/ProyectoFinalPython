@@ -25,13 +25,18 @@ def add_zonas():
     except ValueError:
         print('Dato inválido')
         
-        capacidad_zona = input('Ingrese la capacidad de la zona: ') #definir si debe tener un limite
+    
+        capacidad_zona = input(int('Ingrese la capacidad de la zona: ')) #definir si debe tener un limite
         clear_screen()
 
     zona = {
         'Nro Zona': nro_zona,
         'Nombre Zona': nombre_zona,
-        'Capacidad Zona': capacidad_zona
+        'Capacidad Zona': capacidad_zona,
+        'Ex CPU': 0,
+        'Ex MON': 0,
+        'Ex MOU': 0,
+        'Ex TEC': 0
     }
 
     inventario.get('zonas').update({nro_zona:zona})
