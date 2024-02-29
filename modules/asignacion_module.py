@@ -3,7 +3,7 @@ from modules.activos_module import clear_screen,pause_screen
 # valida el numero de asignacion
 def validar_Nasignacion():
     
-    inventario = cf.read_file(cf.BASE+'inventario.json')
+    inventario = cf.read_file('inventario.json')
     try:
         numero_asignacion = int(input('Ingrese el numero de la asignacion: '))
         if numero_asignacion in inventario['asignacion'] :
