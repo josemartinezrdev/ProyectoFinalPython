@@ -1,5 +1,5 @@
 import modules.core_files as cf
-from activos_module import clear_screen
+from modules.activos_module import clear_screen
 
 
 def add_zonas():

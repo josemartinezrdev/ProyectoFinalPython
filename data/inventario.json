@@ -1,6 +1,58 @@
 {
-    "activos": {},
-    "personal": {},
-    "zonas": {},
+    "activos": {
+        "135": {
+            "cod_campus": "cp001",
+            "cod_transaccion": "13",
+            "nro_formulario": "654",
+            "nro_serial": "465",
+            "name_activo": "135",
+            "ubicacion_activo": "apolo",
+            "marca": "sdf",
+            "categoria": "asdf",
+            "estado": "no_asignado",
+            "proveedor": "1235456",
+            "valor": 50,
+            "empresa_resp": "sdfg",
+            "tipo": "asd"
+        },
+        "sdf": {
+            "cod_campus": "mou001",
+            "cod_transaccion": "asdf",
+            "nro_formulario": "asdf",
+            "nro_serial": "sdf",
+            "name_activo": "sdf",
+            "ubicacion_activo": "sadf",
+            "marca": "asdf",
+            "categoria": "asdf",
+            "estado": "no_asignado",
+            "proveedor": "sdf",
+            "valor": 45,
+            "empresa_resp": "asd",
+            "tipo": "sd"
+        }
+    },
+    "personal": {
+        "1025773169": {
+            "id": "1025773169",
+            "name": "juan",
+            "email": "kahdsajkhd",
+            "tel_movil": "168653",
+            "tel_casa": "32135",
+            "tel_personal": "13513",
+            "tel_oficina": "12313"
+        }
+    },
+    "zonas": {
+        "1": {
+            "Nro Zona": "1",
+            "Nombre Zona": "Apolo",
+            "Capacidad Zona": "5"
+        },
+        "2": {
+            "Nro Zona": "2",
+            "Nombre Zona": "Artemis",
+            "Capacidad Zona": "2"
+        }
+    },
     "asignacion": {}
 }

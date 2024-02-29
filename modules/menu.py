@@ -141,7 +141,7 @@ def create_menu_asignar(inventario:dict):
         create_menu_asignar(inventario)
     else:
         if opt=='1':
-            asm.crear_asignacion()
+            asm.agregar_asignacion()
         elif opt=='2':
             pass
         elif opt=='3':

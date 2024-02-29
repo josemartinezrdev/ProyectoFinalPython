@@ -52,17 +52,17 @@ def add_activos():
     else:
         # proveedor = inventario.get('personal').get(proveedor)['name']
         clear_screen()
-        try:
-            valor = int(input('Ingrese el valor unitario\n-> '))
-        except ValueError:
-            print('Los valores deben ser de tipo entero')
-            pause_screen()
-            add_activos()
-        else:
-            clear_screen()
-            empresa_resp = input('Ingrese la empresa responsable del activo\n-> ')
-            clear_screen()
-            tipo = input('Ingrese el tipo de activo\n-> ')
+    try:
+        valor = int(input('Ingrese el valor unitario\n-> '))
+    except ValueError:
+        print('Los valores deben ser de tipo entero')
+        pause_screen()
+        add_activos()
+    else:
+        clear_screen()
+        empresa_resp = input('Ingrese la empresa responsable del activo\n-> ')
+        clear_screen()
+        tipo = input('Ingrese el tipo de activo\n-> ')
 
         activo = {
             'cod_campus': cod_campus,
