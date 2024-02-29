@@ -19,36 +19,14 @@ def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
 
-# FUNCIONES APZ
-
-# def updateData(data,srcData):
-#     if (len(data) <=0):
-#         print('😎 No se encontró información 😎')
-#         os.system('pause')
-#     else:
-#         for key in data.keys():
-#             if(key != 'nit'):
-#                 if(type(data[key]) == dict):
-#                     for key2 in data[key].keys():
-#                         if(bool(input(f'Desea modificar el {key2} s(si) o Enter No'))):
-#                             os.system('cls')
-#                             data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
-#                 else:
-#                     if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
-#                         os.system('cls')
-#                         data[key] = input(f'Ingrese el nuevo valor para {key} :')
-#         srcData['proveedores'].update({data['nit']:data})
-#         UpdateFile('inventario.json',srcData)
-#     os.system('pause')
-
 def edit_file_apz(nombre):
 
     if nombre == 'ACTIVOS':
-        msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
+        msg = 'Ingrese el "Código campus" del activo que va a editar\n-> '
     elif nombre == 'PERSONAL':
-        msg = 'Ingrese el "id" de la persona / proveedor que va a eliminar\n-> '
+        msg = 'Ingrese el "id" de la persona / proveedor que va a editar\n-> '
     elif nombre == 'ZONAS':
-        msg = 'Ingrese el "Número de zona" de la zona que va a eliminar\n-> '
+        msg = 'Ingrese el "Número de zona" de la zona que va a editar\n-> '
 
     inventario = read_file('inventario.json')
 
