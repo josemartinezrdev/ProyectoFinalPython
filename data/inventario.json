@@ -1,5 +1,36 @@
 {
-    "activos": {},
+    "activos": {
+        "cp001": {
+            "cod_campus": "cp001",
+            "cod_transaccion": "fsfs",
+            "nro_formulario": "sdfsf",
+            "nro_serial": "54fs",
+            "name_activo": "cpu",
+            "ubicacion_activo": "no_asignada",
+            "marca": "comsdasd",
+            "categoria": "computador",
+            "estado": "no_asignado",
+            "proveedor": "123456",
+            "valor": 50,
+            "empresa_resp": "campus",
+            "tipo": "sfsdf"
+        },
+        "cp002": {
+            "cod_campus": "cp002",
+            "cod_transaccion": "ljgdl4",
+            "nro_formulario": "dgd54g6d",
+            "nro_serial": "4g5d6g12",
+            "name_activo": "4g56g2d",
+            "ubicacion_activo": "no_asignada",
+            "marca": "compumax",
+            "categoria": "equipo de computo",
+            "estado": "no_asignado",
+            "proveedor": "123456",
+            "valor": 50,
+            "empresa_resp": "campus",
+            "tipo": "cpu"
+        }
+    },
     "personal": {
         "567": {
             "id": "567",
@@ -9,18 +40,29 @@
             "tel_casa": "fd",
             "tel_personal": "gfd",
             "tel_oficina": "gf"
+        },
+        "123456": {
+            "id": "123456",
+            "tipo": "Natural",
+            "name": "juan",
+            "email": "sdfgh",
+            "telefonos": {
+                "tel_movil": "46456",
+                "tel_casa": "546",
+                "tel_personal": "4565",
+                "tel_oficina": "456"
+            }
         }
     },
     "zonas": {
         "1": {
             "Nro Zona": "1",
-            "Nombre Zona": "zona1",
-            "Capacidad Zona": "30"
-        },
-        "3": {
-            "Nro Zona": "3",
-            "Nombre Zona": "zona 3",
-            "Capacidad Zona": "33"
+            "Nombre Zona": "apolo",
+            "Capacidad Zona": 20,
+            "Ex CPU": 0,
+            "Ex MON": 0,
+            "Ex MOU": 0,
+            "Ex TEC": 0
         }
     },
     "asignaciones": {}
