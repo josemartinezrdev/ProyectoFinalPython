@@ -118,7 +118,28 @@ def create_menu_apz(nombre:str, inventario:dict):
                 cf.edit_file_apz(nombre)
                 return True
             elif nombre == 'ZONAS':
-                zom.add_zonas()
+                cf.edit_file_apz(nombre)
+        
+        elif opt == '3':
+            if nombre == 'ACTIVOS':
+                cf.edit_file_apz(nombre)
+                return True
+            elif nombre == 'PERSONAL':
+                cf.edit_file_apz(nombre)
+                return True
+            elif nombre == 'ZONAS':
+                cf.eliminar_zona()
+                return True
+        elif opt == '4':
+            if nombre == 'ACTIVOS':
+                cf.edit_file_apz(nombre)
+                return True
+            elif nombre == 'PERSONAL':
+                cf.edit_file_apz(nombre)
+                return True
+            elif nombre == 'ZONAS':
+                cf.buscar_zona(data_inventario)
+                return True
         elif opt == '5':
             create_menu(inventario)
     return True

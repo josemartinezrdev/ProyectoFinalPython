@@ -27,12 +27,6 @@
             "tel_oficina": "090908"
         }
     },
-    "zonas": {
-        "1": {
-            "Nro Zona": "1",
-            "Nombre Zona": "Artemis",
-            "Capacidad Zona": "36"
-        }
-    },
+    "zonas": {},
     "asignaciones": {}
 }
