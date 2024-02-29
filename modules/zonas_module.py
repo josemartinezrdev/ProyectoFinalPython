@@ -38,9 +38,3 @@ def add_zonas():
     cf.update_file('inventario.json', inventario)
 
     return
-
-# def edit_zonas():
-
-#     inventario = cf.read_file(cf.BASE+'inventario.json')
-
-#     # if (len(data))

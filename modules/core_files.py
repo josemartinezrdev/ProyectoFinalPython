@@ -4,11 +4,12 @@ import os
 BASE = 'data/'
 
 
+# GENERALES
+
 def check_file(archivo: str, data):
     if (not (os.path.isfile(BASE + archivo))):
         with open(BASE + archivo, "w") as bw:
             json.dump(data, bw, indent=4)
-
 
 def read_file(archivo: str):
     with open(BASE+archivo, 'r') as rf:
@@ -19,6 +20,7 @@ def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
 
+# FUNCIONES APZ
 
 def edit_file_apz(nombre):
 
@@ -50,17 +52,6 @@ def edit_file_apz(nombre):
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
 
-def eliminar_zona():
-
-    inventario = read_file('inventario.json')
-
-    elim_dato = input("Ingrese la zona que desea borrar -> ")
-    if elim_dato in inventario['zonas']:
-        inventario['zonas'].pop(elim_dato)
-        update_file('inventario.json',inventario)
-    else:
-        print("La zona ingresada no existe en el inventario.")
-
 def buscar_zona():
 
     inventario = read_file('inventario.json')
@@ -71,7 +62,8 @@ def buscar_zona():
     print(f'{result}')
     os.system('pause')
 
-def edit_file_apz(nombre):
+
+def delete_data_apz(nombre):
 
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
@@ -82,22 +74,7 @@ def edit_file_apz(nombre):
 
     inventario = read_file('inventario.json')
 
-    palabra = input(msg)
+    delete_value = input(msg)
     
-    if nombre.lower() in inventario:
-        if palabra in inventario[nombre.lower()]:
-            result= inventario['zonas'].get(palabra)
-
-            for key, value in data.items():
-                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'Nro Zona']:
-                    if input(f'Desea modificar {key}? s(si) / Enter(no)\n-> ').lower() == 's':
-                        os.system('cls')
-                        nuevo_valor = input(f'Ingrese el nuevo valor para {key}:\n-> ')
-                        os.system('cls')
-                        data[key] = nuevo_valor
-
-            inventario[nombre.lower()][palabra] = data
-            update_file('inventario.json', inventario)
-        else:
-            print(f'No existe en {nombre.lower()}: {palabra}')
-
+    inventario[nombre.lower()].pop(delete_value)
+    update_file('inventario.json', inventario)
