@@ -8,10 +8,15 @@ if __name__ == "__main__":
     inventario = {
         'activos': {},
         'personal': {},
-        'zonas': {}
+        'zonas': {},
+        'asignaciones': {}
     }
 
     cf.check_file("inventario.json",inventario)
 
-    acm.clear_screen()
-    mn.create_menu(inventario)
+    isRunning = True
+    while isRunning:
+        
+        acm.clear_screen()
+        o = mn.create_menu(inventario)
+        isRunning = o
