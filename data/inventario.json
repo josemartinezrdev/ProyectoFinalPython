@@ -96,6 +96,26 @@
             "nro_zona": "fgfg",
             "nombre_zona": "ggfg",
             "capacidad_zona": "fgf"
+        },
+        "1": {
+            "Nro Zona": "1",
+            "Nombre Zona": "df",
+            "Capacidad Zona": "5"
+        },
+        "2": {
+            "Nro Zona": "2",
+            "Nombre Zona": "df",
+            "Capacidad Zona": "6"
+        },
+        "3": {
+            "Nro Zona": "3",
+            "Nombre Zona": "d",
+            "Capacidad Zona": "d"
+        },
+        "6": {
+            "Nro Zona": "6",
+            "Nombre Zona": "f",
+            "Capacidad Zona": "f"
         }
     }
 }
