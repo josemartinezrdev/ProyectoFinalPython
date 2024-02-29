@@ -32,7 +32,7 @@ def edit_file_apz(nombre):
     inventario = read_file('inventario.json')
 
     palabra = input(msg)
-
+    
     if nombre.lower() in inventario:
         if palabra in inventario[nombre.lower()]:
             data = inventario[nombre.lower()][palabra]
