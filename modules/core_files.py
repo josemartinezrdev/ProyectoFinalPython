@@ -4,11 +4,12 @@ import os
 BASE = 'data/'
 
 
+# GENERALES
+
 def check_file(archivo: str, data):
     if (not (os.path.isfile(BASE + archivo))):
         with open(BASE + archivo, "w") as bw:
             json.dump(data, bw, indent=4)
-
 
 def read_file(archivo: str):
     with open(BASE+archivo, 'r') as rf:
@@ -19,6 +20,7 @@ def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
 
+# FUNCIONES APZ
 
 def edit_file_apz(nombre):
 
@@ -53,3 +55,20 @@ def edit_file_apz(nombre):
         print(f'No existe la categoría {nombre.lower()} en el inventario.')
 
     os.system('pause')
+
+
+def delete_data(nombre):
+
+    if nombre == 'ACTIVOS':
+        msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
+    elif nombre == 'PERSONAL':
+        msg = 'Ingrese el "id" de la persona / proveedor que va a eliminar\n-> '
+    elif nombre == 'ZONAS':
+        msg = 'Ingrese el "Número de zona" de la zona que va a eliminar\n-> '
+
+    inventario = read_file('inventario.json')
+
+    delete_value = input(msg)
+    
+    inventario[nombre.lower()].pop(delete_value)
+    update_file('inventario.json', inventario)
