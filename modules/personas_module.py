@@ -3,7 +3,7 @@ from modules.activos_module import clear_screen, pause_screen
 
 def add_personas():
 
-    inventario = cf.read_file(cf.BASE+'inventario.json')
+    inventario = cf.read_file('inventario.json')
 
     id = input('Ingrese id/cc de la persona\n-> ')
     clear_screen()

@@ -1,58 +1,38 @@
 {
     "activos": {
-        "135": {
-            "cod_campus": "cp001",
-            "cod_transaccion": "13",
-            "nro_formulario": "654",
-            "nro_serial": "465",
-            "name_activo": "135",
-            "ubicacion_activo": "apolo",
-            "marca": "sdf",
-            "categoria": "asdf",
+        "1005184428": {
+            "cod_campus": "1005184428",
+            "cod_transaccion": "0909",
+            "nro_formulario": "1",
+            "nro_serial": "879809",
+            "name_activo": "PC-CAMPUS-1",
+            "ubicacion_activo": "Apolo",
+            "marca": "COMPUMAX",
+            "categoria": "Equipo de computo",
             "estado": "no_asignado",
-            "proveedor": "1235456",
-            "valor": 50,
-            "empresa_resp": "sdfg",
-            "tipo": "asd"
-        },
-        "sdf": {
-            "cod_campus": "mou001",
-            "cod_transaccion": "asdf",
-            "nro_formulario": "asdf",
-            "nro_serial": "sdf",
-            "name_activo": "sdf",
-            "ubicacion_activo": "sadf",
-            "marca": "asdf",
-            "categoria": "asdf",
-            "estado": "no_asignado",
-            "proveedor": "sdf",
-            "valor": 45,
-            "empresa_resp": "asd",
-            "tipo": "sd"
+            "proveedor": "1096195872",
+            "valor": "500000",
+            "empresa_resp": "Campuslands",
+            "tipo": "Computador de mesa"
         }
     },
     "personal": {
-        "1025773169": {
-            "id": "1025773169",
-            "name": "juan",
-            "email": "kahdsajkhd",
-            "tel_movil": "168653",
-            "tel_casa": "32135",
-            "tel_personal": "13513",
-            "tel_oficina": "12313"
+        "1096195872": {
+            "id": "1096195872",
+            "name": "Julian Perez",
+            "email": "jose@gmail.com",
+            "tel_movil": "3166791419",
+            "tel_casa": "3166791419",
+            "tel_personal": "3163960490",
+            "tel_oficina": "090908"
         }
     },
     "zonas": {
         "1": {
             "Nro Zona": "1",
-            "Nombre Zona": "Apolo",
-            "Capacidad Zona": "5"
-        },
-        "2": {
-            "Nro Zona": "2",
             "Nombre Zona": "Artemis",
-            "Capacidad Zona": "2"
+            "Capacidad Zona": "36"
         }
     },
-    "asignacion": {}
+    "asignaciones": {}
 }

@@ -50,7 +50,7 @@ def val_tipo_asignacion():
         val_tipo_asignacion()
 #valida el id de la persona que adquiere el activo
 def validar_id():
-    inventario = cf.read_file(cf.BASE+'inventario.json') 
+    inventario = cf.read_file('inventario.json') 
     id_persona=input('Ingrese el Id de la persona')
     if id_persona in inventario['personal']:
         nombre=inventario.get('personal').get(id_persona).get('name')
@@ -62,7 +62,7 @@ def validar_id():
         clear_screen()
         validar_id()
 def validar_zona_asignada():
-    inventario = cf.read_file(cf.BASE+'inventario.json')
+    inventario = cf.read_file('inventario.json')
     opcion_zona=input('Ingrese el numero de la zona: ')
     if opcion_zona in inventario['zonas']:
         return opcion_zona
@@ -73,11 +73,11 @@ def validar_zona_asignada():
         validar_zona_asignada()
 
 def validar_activo():
-    inventario = cf.read_file(cf.BASE+'inventario.json') 
+    inventario = cf.read_file('inventario.json') 
     CodCampus=input('Ingrese el CodCampus del activo')
 def agregar_asignacion():
 
-    inventario = cf.read_file(cf.BASE+'inventario.json') 
+    inventario = cf.read_file('inventario.json') 
     numero_asignacion=validar_Nasignacion()
     fecha_asignacion=str(input('Ingrese la Fecha de la asignacion'))
     tipo_asignacion=val_tipo_asignacion()
