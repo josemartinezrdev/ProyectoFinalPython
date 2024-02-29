@@ -24,11 +24,11 @@ def update_file(archivo, data):
 def edit_file_apz(nombre):
 
     if nombre == 'ACTIVOS':
-        msg = 'Ingrese el "Código campus" del activo que va a editar\n-> '
+        msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
     elif nombre == 'PERSONAL':
-        msg = 'Ingrese el "id" de la persona / proveedor que va a editar\n-> '
+        msg = 'Ingrese el "id" de la persona / proveedor que va a eliminar\n-> '
     elif nombre == 'ZONAS':
-        msg = 'Ingrese el "Número de zona" de la zona que va a editar\n-> '
+        msg = 'Ingrese el "Número de zona" de la zona que va a eliminar\n-> '
 
     inventario = read_file('inventario.json')
 
@@ -50,9 +50,15 @@ def edit_file_apz(nombre):
             update_file('inventario.json', inventario)
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
-    else:
-        print(f'No existe la categoría {nombre.lower()} en el inventario.')
 
+def buscar_zona():
+
+    inventario = read_file('inventario.json')
+
+    valor = input("Ingrese la zona a buscar -> ")
+    result= inventario['zonas'].get(valor)
+    nro_zona,nombre_zona,capacidad_zona,  = result.values()
+    print(f'{result}')
     os.system('pause')
 
 
