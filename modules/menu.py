@@ -117,6 +117,16 @@ def create_menu_apz(nombre:str, inventario:dict):
                 return True
             elif nombre == 'ZONAS':
                 cf.edit_file_apz(nombre)
+
+        elif opt == '3':
+            if nombre == 'ACTIVOS':
+                cf.delete_data_apz(nombre)
+                return True
+            elif nombre == 'PERSONAL':
+                cf.delete_data_apz(nombre)
+                return True
+            elif nombre == 'ZONAS':
+                cf.delete_data_apz(nombre)
         elif opt == '5':
             create_menu(inventario)
     return True
@@ -145,7 +155,7 @@ def create_menu_asignar(inventario:dict):
         create_menu_asignar(inventario)
     else:
         if opt=='1':
-            asm.crear_asignacion()
+            asm.agregar_asignacion()
         elif opt=='2':
             pass
         elif opt=='3':

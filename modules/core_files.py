@@ -57,7 +57,7 @@ def edit_file_apz(nombre):
     os.system('pause')
 
 
-def delete_data(nombre):
+def delete_data_apz(nombre):
 
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
