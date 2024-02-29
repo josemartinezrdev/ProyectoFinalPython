@@ -16,7 +16,7 @@ def add_zonas():
     zona = {
         'Nro Zona': nro_zona,
         'Nombre Zona': nombre_zona,
-        'Capacidad Zona': capacidad_zona
+        'Capacidad Zona': capacidad_zona,
     }
 
     inventario.get('zonas').update({nro_zona:zona})

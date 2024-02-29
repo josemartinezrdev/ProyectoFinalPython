@@ -5,7 +5,14 @@ def add_personas():
 
     inventario = cf.read_file('inventario.json')
 
-    id = input('Ingrese id/cc de la persona\n-> ')
+
+    id = input('Ingrese id/cc de la persona\n-> ') 
+    clear_screen()
+    opt = input('Elija si es persona natural "1", o persona jurídica "2"\n-> ')
+    if opt == "1":
+        tipo = 'Natural'
+    elif opt == "2":
+        tipo = "Jurídica"
     clear_screen()
     name = input('Ingrese nombre de la persona\n-> ')
     clear_screen()
@@ -22,28 +29,19 @@ def add_personas():
 
     persona = {
         'id': id,
+        'tipo': tipo,
         'name': name,
         'email': email,
-        'tel_movil': tel_movil,
-        'tel_casa': tel_casa,
-        'tel_personal': tel_personal,
-        'tel_oficina': tel_oficina
-    }
+        'telefonos': {
+            'tel_movil': tel_movil,
+            'tel_casa': tel_casa,
+            'tel_personal': tel_personal,
+            'tel_oficina': tel_oficina
+            }
+        }
 
     inventario.get('personal').update({id:persona})
     cf.update_file('inventario.json', inventario)
-
-
-# def edit_personas():
-#     pass
-
-
-# def delete_personas():
-#     pass
-
-
-# def search_personas():
-#     pass
 
 
 #' Usar este código cuando necesite añadir o editar el estado.

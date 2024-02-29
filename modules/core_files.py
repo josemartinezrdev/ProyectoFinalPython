@@ -3,7 +3,6 @@ import os
 
 BASE = 'data/'
 
-
 # GENERALES
 
 def check_file(archivo: str, data):
