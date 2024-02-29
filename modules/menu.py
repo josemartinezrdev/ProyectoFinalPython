@@ -5,6 +5,7 @@ import modules.zonas_module as zom
 import modules.core_files as cf
 import modules.asignacion_module as asm
 
+data_inventario={}
 
 def create_menu(inventario:dict):
     title = """
@@ -107,6 +108,7 @@ def create_menu_apz(nombre:str, inventario:dict):
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
                 zom.add_zonas()
+                create_menu_apz(nombre, inventario)
 
         elif opt == '2':
             if nombre == 'ACTIVOS':
@@ -117,9 +119,22 @@ def create_menu_apz(nombre:str, inventario:dict):
                 return True
             elif nombre == 'ZONAS':
                 cf.edit_file_apz(nombre)
+
+        elif opt == '3':
+            if nombre == 'ACTIVOS':
+                cf.delete_data_apz(nombre)
+                return True
+            elif nombre == 'PERSONAL':
+                cf.delete_data_apz(nombre)
+                return True
+            elif nombre == 'ZONAS':
+                cf.delete_data_apz(nombre)
         elif opt == '5':
             create_menu(inventario)
     return True
+
+def create_menu_zonas():
+    pass
 
 
 def create_menu_asignar(inventario:dict):

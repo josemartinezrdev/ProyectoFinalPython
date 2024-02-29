@@ -1,37 +1,26 @@
 {
-    "activos": {
-        "1005184428": {
-            "cod_campus": "1005184428",
-            "cod_transaccion": "0909",
-            "nro_formulario": "1",
-            "nro_serial": "879809",
-            "name_activo": "PC-CAMPUS-1",
-            "ubicacion_activo": "Apolo",
-            "marca": "COMPUMAX",
-            "categoria": "Equipo de computo",
-            "estado": "no_asignado",
-            "proveedor": "1096195872",
-            "valor": "500000",
-            "empresa_resp": "Campuslands",
-            "tipo": "Computador de mesa"
-        }
-    },
+    "activos": {},
     "personal": {
-        "1096195872": {
-            "id": "1096195872",
-            "name": "Julian Perez",
-            "email": "jose@gmail.com",
-            "tel_movil": "3166791419",
-            "tel_casa": "3166791419",
-            "tel_personal": "3163960490",
-            "tel_oficina": "090908"
+        "567": {
+            "id": "567",
+            "name": "compumax",
+            "email": "dsvfvcx",
+            "tel_movil": "dfd",
+            "tel_casa": "fd",
+            "tel_personal": "gfd",
+            "tel_oficina": "gf"
         }
     },
     "zonas": {
         "1": {
             "Nro Zona": "1",
-            "Nombre Zona": "Artemis",
-            "Capacidad Zona": "36"
+            "Nombre Zona": "zona1",
+            "Capacidad Zona": "30"
+        },
+        "3": {
+            "Nro Zona": "3",
+            "Nombre Zona": "zona 3",
+            "Capacidad Zona": "33"
         }
     },
     "asignaciones": {}
