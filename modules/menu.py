@@ -24,6 +24,7 @@ def create_menu(inventario:dict):
     # 7. SALIR #¿ Jose
     # """
 
+    acm.clear_screen()
     print(title)
 
     opts = (['1', 'ACTIVOS'], ['2', 'PERSONAL'], ['3', 'ZONAS'], ['4', 'ASIGNACIÓN DE ACTIVOS'], ['5', 'REPORTES'], ['6', 'MOVIMIENTO DE ACTIVOS'], ['7', 'SALIR'])
@@ -43,24 +44,18 @@ def create_menu(inventario:dict):
         if opt == '1':
             nombre = 'ACTIVOS'
             create_menu_apz(nombre, inventario)
-            create_menu(inventario)
         elif opt == '2':
             nombre = 'PERSONAL'
             create_menu_apz(nombre, inventario)
-            create_menu(inventario)
         elif opt == '3':
             nombre = 'ZONAS'
             create_menu_apz(nombre, inventario)
-            create_menu(inventario)
         elif opt == '4':
             create_menu_asignar(inventario)
-            create_menu(inventario)
         elif opt == '5':
             create_menu_reportes()
-            create_menu(inventario)
         elif opt == '6':
             create_menu_movimientos()
-            create_menu(inventario)
         elif opt == '7':
             return
 
@@ -113,10 +108,8 @@ def create_menu_apz(nombre:str, inventario:dict):
         elif opt == '2':
             if nombre == 'ACTIVOS':
                 cf.edit_file_apz(nombre)
-                return True
             elif nombre == 'PERSONAL':
                 cf.edit_file_apz(nombre)
-                return True
             elif nombre == 'ZONAS':
                 cf.edit_file_apz(nombre)
 
@@ -130,7 +123,7 @@ def create_menu_apz(nombre:str, inventario:dict):
             elif nombre == 'ZONAS':
                 cf.delete_data_apz(nombre)
         elif opt == '5':
-            create_menu(inventario)
+            pass
     return True
 
 def create_menu_zonas():

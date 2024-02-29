@@ -40,13 +40,12 @@ def add_activos():
     clear_screen()
     # , Estado
 
-    proveedor = input('Ingrese el ID del proveedor del activo\n-> ')
-    if proveedor not in inventario.get('personal'):
-        print('El proveedor no se encuentra registrado.')
+    proveedor = input('Ingrese el nombre del proveedor del activo\n-> ')
+    if proveedor.isalpha() == False:
+        print('El proveedor debe ser de tipo texto.')
         pause_screen()
-        return
+        add_activos()
     else:
-        # proveedor = inventario.get('personal').get(proveedor)['name']
         clear_screen()
         try:
             valor = int(input('Ingrese el valor unitario\n-> '))

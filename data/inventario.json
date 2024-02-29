@@ -4,13 +4,12 @@
     "zonas": {
         "1": {
             "Nro Zona": "1",
-            "Nombre Zona": "zona1",
-            "Capacidad Zona": "30"
-        },
-        "3": {
-            "Nro Zona": "3",
-            "Nombre Zona": "zona 3",
-            "Capacidad Zona": "33"
+            "Nombre Zona": "Apolo",
+            "Capacidad Zona": "200",
+            "Ex CPU": 0,
+            "Ex MON": 0,
+            "Ex MOU": 0,
+            "Ex TEC": 0
         }
     },
     "asignaciones": {}

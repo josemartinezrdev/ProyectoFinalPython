@@ -4,11 +4,11 @@ import modules.activos_module as acm
 
 
 inventario = {
-        'activos': {},
-        'personal': {},
-        'zonas': {},
-        'asignaciones': {}
-    }
+    'activos': {},
+    'personal': {},
+    'zonas': {},
+    'asignaciones': {}
+}
 
 def main():
     cf.check_file("inventario.json",inventario)

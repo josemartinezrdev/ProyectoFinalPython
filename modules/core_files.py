@@ -39,7 +39,7 @@ def edit_file_apz(nombre):
             data = inventario[nombre.lower()][palabra]
 
             for key, value in data.items():
-                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'Nro Zona']:
+                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'Nro Zona', 'Ex CPU', 'Ex MON', 'Ex MOU', 'Ex TEC']:
                     if input(f'Desea modificar {key}? s(si) / Enter(no)\n-> ').lower() == 's':
                         os.system('cls')
                         nuevo_valor = input(f'Ingrese el nuevo valor para {key}:\n-> ')
@@ -50,6 +50,7 @@ def edit_file_apz(nombre):
             update_file('inventario.json', inventario)
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
+            os.system('pause')
 
 def buscar_zona():
 
