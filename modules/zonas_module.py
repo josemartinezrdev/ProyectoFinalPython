@@ -2,29 +2,26 @@ from modules.core_files import read_file, update_file, clear_screen, pause_scree
 
 def validar_num_zona():
     inventario = read_file('inventario.json')
-    nro_zona = int(input('Ingrese el número de la zona:\n-> '))
-    nombre_zona = ''
+    
     
     try:
+        nro_zona = int(input('Ingrese el número de la zona:\n-> '))
+        nombre_zona = ''
         if nro_zona <= 0:
             print('Dato inválido')
             pause_screen()
             clear_screen()
             validar_num_zona()
         else: 
-            nro_zona = str(nro_zona)
+            nro_zona=str(nro_zona).zfill(3)
+            nro_zona = 'z'+nro_zona
             if nro_zona in inventario['zonas']:
                 print('Zona ya registrada')
                 pause_screen()
                 clear_screen()
                 validar_num_zona()
             else: 
-                nombre_zona = input('Ingrese el nombre de la zona:\n-> ').capitalize()
-                # if nombre_zona in inventario['zonas'][nro_zona]['']:
-                #     print ('Nombre de zona ya registrado')
-                #     pause_screen()
-                #     clear_screen()
-                #     validar_nZona()    
+                nombre_zona = input('Ingrese el nombre de la zona:\n-> ').capitalize()    
     except ValueError:
         print('Dato inválido')
         pause_screen()

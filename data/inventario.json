@@ -1,35 +1,5 @@
 {
     "activos": {
-        "cp002": {
-            "cod_campus": "cp002",
-            "cod_transaccion": "camper2024",
-            "nro_formulario": "2",
-            "nro_serial": "002",
-            "name_activo": "PC-CAMPUS-2",
-            "ubicacion_activo": "no_asignada",
-            "marca": "LENOVO",
-            "categoria": "Equipo de computo",
-            "estado": "no_asignado",
-            "proveedor": "LENOVO",
-            "valor": 1200000,
-            "empresa_resp": "Campuslands",
-            "tipo": "Monitor"
-        },
-        "cp003": {
-            "cod_campus": "cp003",
-            "cod_transaccion": "camper2024",
-            "nro_formulario": "3",
-            "nro_serial": "003",
-            "name_activo": "TEC-CAMPUS-1",
-            "ubicacion_activo": "no_asignada",
-            "marca": "COMPUMAX",
-            "categoria": "Equipo de escritura",
-            "estado": "no_asignado",
-            "proveedor": "COMPUMAX",
-            "valor": 300000,
-            "empresa_resp": "Campuslands",
-            "tipo": "Teclado"
-        },
         "cp001": {
             "cod_campus": "cp001",
             "cod_transaccion": "46465",
@@ -39,11 +9,27 @@
             "ubicacion_activo": "no_asignada",
             "marca": "csdf",
             "categoria": "cpu",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "zona",
             "valor": 52,
             "empresa_resp": "jgj",
             "tipo": "cpu",
+            "historial": {}
+        },
+        "mou001": {
+            "cod_campus": "mou001",
+            "cod_transaccion": "8416",
+            "nro_formulario": "646",
+            "nro_serial": "6452",
+            "name_activo": "mouse",
+            "ubicacion_activo": "no_asignada",
+            "marca": "compumax",
+            "categoria": "mouse",
+            "estado": "0",
+            "proveedor": "compumax",
+            "valor": 8,
+            "empresa_resp": "campus",
+            "tipo": "mause",
             "historial": {}
         }
     },
@@ -86,15 +72,27 @@
         }
     },
     "zonas": {
-        "1": {
-            "nro_zona": "1",
+        "z001": {
+            "nro_zona": "z001",
             "nombre_zona": "Apolo",
-            "capacidad_zona": 45,
+            "capacidad_zona": 20,
             "ex_cpu": 0,
             "ex_mon": 0,
             "ex_mou": 0,
             "ex_tec": 0
         }
     },
-    "asignaciones": {}
+    "asignaciones": {
+        "PER001": {
+            "fecha_asignacion": "164",
+            "tipo_asignacion ": "Personal",
+            "asignado_a": [
+                "PER001",
+                "Pepito perez"
+            ],
+            "activos_asignados": [
+                "cp001"
+            ]
+        }
+    }
 }
