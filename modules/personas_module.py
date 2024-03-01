@@ -1,5 +1,4 @@
-from modules.core_files import read_file, update_file
-from modules.activos_module import clear_screen
+from modules.core_files import read_file, update_file, clear_screen
 
 def add_personas():
 
@@ -8,7 +7,7 @@ def add_personas():
 
     id = input('Ingrese id/cc de la persona\n-> ') 
     clear_screen()
-    opt = input('Elija si es persona natural "1", o persona jurídica "2"\n-> ')
+    opt = input('Elija si es persona natural: "1", o persona jurídica: "2"\n-> ')
     if opt == "1":
         tipo = 'Natural'
     elif opt == "2":
@@ -19,13 +18,13 @@ def add_personas():
     email = input(f'Ingrese el email de {name}\n-> ')
     clear_screen()
 
-    if input('Tiene teléfono movil? Si(s) / No(Enter) \n-> ').lower() == 's':
-        tel_movil = input(f'Ingrese teléfono movil de {name}\n-> ')
+    if input('Tiene teléfono móvil? Si(s) / No(Enter) \n-> ').lower() == 's':
+        tel_movil = input(f'Ingrese teléfono móvil de {name}\n-> ')
         clear_screen()
     else: 
         tel_movil = 'No aplica'
     if input('Tiene teléfono en casa? Si(s) / No(Enter) \n-> ').lower() == 's':
-        tel_casa = input(f'Ingrese teléfono de cada de {name}\n-> ')
+        tel_casa = input(f'Ingrese número del teléfono de casa para {name}\n-> ')
         clear_screen()
     else: 
         tel_casa = 'No aplica'

@@ -1,5 +1,4 @@
-from modules.core_files import read_file, update_file
-from modules.activos_module import clear_screen, pause_screen
+from modules.core_files import read_file, update_file, clear_screen, pause_screen
 
 def validar_num_zona():
     inventario = read_file('inventario.json')
@@ -37,12 +36,12 @@ def validar_capacidad():
     capacidad_zona = int(input('Ingrese la capacidad de la zona:\n-> '))
     try:
         if capacidad_zona <= 0:
-            print('Numero Errado')
+            print('Número Errado')
             pause_screen()
             clear_screen()
             validar_capacidad()
     except ValueError:
-        print('Numero Errado')
+        print('Número Errado')
         pause_screen()
         clear_screen()
         validar_capacidad()

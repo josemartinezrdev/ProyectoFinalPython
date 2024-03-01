@@ -1,63 +1,48 @@
-import os, sys
-from modules.core_files import read_file, update_file
+from modules.core_files import read_file, update_file, clear_screen, pause_screen
 
 #AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
-
-def clear_screen():
-    if sys.platform == "linux" or sys.platform == "darwin":
-        os.system("clear")
-    else:
-        os.system("cls")
-
-
-def pause_screen():
-    if sys.platform == "linux" or sys.platform == "darwin":
-        x = input("Presione una tecla para continuar...")
-    else:
-        os.system("pause")
-
 
 def add_activos():
 
     inventario = read_file('inventario.json')
 
-    cod_campus = input('Ingrese el código de campus\n-> ')
+    cod_campus = input('Ingrese el "Código de Campus"\n-> ')
     clear_screen()
-    cod_transaccion = input('Ingrese el código de transacción\n-> ')
+    cod_transaccion = input('Ingrese el "Código de Transacción"\n-> ')
     clear_screen()
-    nro_formulario = input('Ingrese el número de formulario\n-> ')
+    nro_formulario = input('Ingrese el "Número de Formulario"\n-> ')
     clear_screen()
-    nro_serial = input('Ingrese el número serial\n-> ')
+    nro_serial = input('Ingrese el "Número Serial"\n-> ')
     clear_screen()
-    name_activo = input('Ingrese el nombre del activo\n-> ')
-    clear_screen()
-
+    name_activo = input('Ingrese el "Nombre" del activo\n-> ')
     clear_screen()
 
-    marca = input('Ingrese la marca\n-> ')
     clear_screen()
-    categoria = input('Ingrese la categoría\n-> ')
+
+    marca = input('Ingrese la "Marca"\n-> ')
+    clear_screen()
+    categoria = input('Ingrese la "Categoría#\n-> ')
     clear_screen()
     # , Estado
 
-    proveedor = input('Ingrese el nombre del proveedor del activo\n-> ')
+    proveedor = input('Ingrese el "Nombre del Proveedor" del activo\n-> ')
     if proveedor.isalpha() == False:
-        print('El proveedor debe ser de tipo texto.')
+        print('El "Proveedor" debe ser de tipo texto.')
         pause_screen()
         add_activos()
     else:
         clear_screen()
         try:
-            valor = int(input('Ingrese el valor unitario\n-> '))
+            valor = int(input('Ingrese el "Valor Unitario"\n-> '))
         except ValueError:
-            print('Los valores deben ser de tipo entero')
+            print('El "Valor Unitario" debe ser de tipo entero')
             pause_screen()
             add_activos()
         else:
             clear_screen()
-            empresa_resp = input('Ingrese la empresa responsable del activo\n-> ')
+            empresa_resp = input('Ingrese la "Empresa Responsable" del activo\n-> ')
             clear_screen()
-            tipo = input('Ingrese el tipo de activo\n-> ')
+            tipo = input('Ingrese el "Tipo" de activo\n-> ')
 
         activo = {
             'cod_campus': cod_campus,
@@ -68,12 +53,12 @@ def add_activos():
             'ubicacion_activo': 'no_asignada',
             'marca': marca,
             'categoria': categoria,
-            'estado': '0', # lo cambie xd 
+            'estado': '0',
             'proveedor': proveedor,
             'valor': valor,
             'empresa_resp': empresa_resp,
             'tipo': tipo,
-            'historial':{}
+            'historial': {}
         }
 
         inventario.get('activos').update({cod_campus: activo}) 

@@ -1,5 +1,5 @@
 notas.txt
 notas_jose.txt
 .gitattributes
-.vscode
-__pycache__
+.pyc
+settings.json

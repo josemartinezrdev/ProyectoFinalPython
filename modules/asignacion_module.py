@@ -1,5 +1,4 @@
-from modules.core_files import read_file, update_file
-from modules.activos_module import clear_screen, pause_screen
+from modules.core_files import read_file, update_file, clear_screen, pause_screen
 
 # valida el numero de asignación
 

@@ -1,9 +1,24 @@
 import json
-import os
+import sys, os
 
 BASE = 'data/'
 global count
 count = 0
+
+# PANTALLA
+
+def clear_screen():
+    if sys.platform == "linux" or sys.platform == "darwin":
+        os.system("clear")
+    else:
+        os.system("cls")
+
+
+def pause_screen():
+    if sys.platform == "linux" or sys.platform == "darwin":
+        x = input("Presione una tecla para continuar...")
+    else:
+        os.system("pause")
 
 # GENERALES
 
@@ -24,9 +39,9 @@ def update_file(archivo, data):
 def edit_file_apz(nombre):
 
     if nombre == 'ACTIVOS':
-        msg = 'Ingrese el "Código campus" del activo que va a editar\n-> '
+        msg = 'Ingrese el "Código Campus" del activo que va a editar\n-> '
     elif nombre == 'PERSONAL':
-        msg = 'Ingrese el "id" de la persona / proveedor que va a editar\n-> '
+        msg = 'Ingrese el "id" de la persona que va a editar\n-> '
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a editar\n-> '
 
@@ -65,7 +80,7 @@ def delete_data_apz(nombre):
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
     elif nombre == 'PERSONAL':
-        msg = 'Ingrese el "id" de la persona / proveedor que va a eliminar\n-> '
+        msg = 'Ingrese el "id" de la persona que va a eliminar\n-> '
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a eliminar\n-> '
 
@@ -76,7 +91,7 @@ def delete_data_apz(nombre):
     if delete_value not in inventario[nombre.lower()]:
         global count
         count += 1
-        print(f'El dato que ingresa no esta registrado | Intento {count}/3')
+        print(f'El dato que ingresó no esta registrado | Intento {count}/3')
         os.system('pause')
         if count > 2:
             count = 0
@@ -91,7 +106,7 @@ def search_data_apz(nombre):
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a buscar\n-> '
     elif nombre == 'PERSONAL':
-        msg = 'Ingrese el "id" de la persona / proveedor que va a buscar\n-> '
+        msg = 'Ingrese el "id" de la persona que va a buscar\n-> '
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a buscar\n-> '
 
@@ -102,7 +117,7 @@ def search_data_apz(nombre):
     if search_value not in inventario[nombre.lower()]:
         global count
         count += 1
-        print(f'El dato que ingresa no esta registrado | Intento {count}/3')
+        print(f'El dato que ingresó no esta registrado | Intento {count}/3')
         os.system('pause')
         if count > 2:
             count = 0
@@ -117,5 +132,5 @@ def search_data_apz(nombre):
                     print(f'    {item2}: {value2}\n')
             else:
                 print(f'{item}: {value}\n')
-        print('-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-')
+        print('-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n')
         os.system('pause')

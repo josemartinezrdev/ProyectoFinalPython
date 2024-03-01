@@ -1,9 +1,9 @@
 from tabulate import tabulate
-from modules.activos_module import pause_screen, clear_screen, add_activos
+from modules.activos_module import add_activos
 from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
-from modules.core_files import edit_file_apz, delete_data_apz, search_data_apz
+from modules.core_files import edit_file_apz, delete_data_apz, search_data_apz, pause_screen, clear_screen
 
 
 def create_menu(inventario: dict):
@@ -83,7 +83,7 @@ def create_menu_apz(nombre: str, inventario: dict):
     print(title)
 
     opts = (['1', 'AGREGAR'], ['2', 'EDITAR'], ['3', 'ELIMINAR'],
-            ['4', 'BUSCAR'], ['5', 'REGRESAR AL MENU PRINCIPAL'])
+            ['4', 'BUSCAR'], ['5', 'REGRESAR AL MENÚ PRINCIPAL'])
     print(tabulate(opts, tablefmt='grid'))
 
     opt = input('Ingrese la opción:\n-> ')
@@ -161,7 +161,7 @@ def create_menu_asignar(inventario: dict):
     print(title)
 
     opts = (['1', 'CREAR ASIGNACION'], ['2', 'BUSCAR'],
-            ['3', 'REGRESAR AL MENU PRINCIPAL'])
+            ['3', 'REGRESAR AL MENÚ PRINCIPAL'])
     print(tabulate(opts, tablefmt='grid'))
 
     opt = input('Ingrese la opción:\n-> ')
