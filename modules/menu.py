@@ -3,6 +3,7 @@ from modules.activos_module import add_activos
 from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
+from modules.reports_module import report_all_actives, report_list_category
 from modules.core_files import edit_file_apz, delete_data_apz, search_data_apz, pause_screen, clear_screen
 
 
@@ -178,7 +179,46 @@ def create_menu_asignar(inventario: dict):
 
 
 def create_menu_reportes():
-    pass
+    clear_screen()
+    title = f"""
+    ++++++++++++++++++++++++++
+    +       MENÚ REPORTES    +
+    ++++++++++++++++++++++++++
+    """
+    options = ['1', '2', '3', '4', '5']
+
+    print(title)
+
+    opts = (['1', 'LISTAR TODOS LOS ACTIVOS'], ['2', 'LISTAR ACTIVOS POR CATEGORIA'],
+            ['3', 'LISTAR ACTIVOS DADOS DE BAJA POR DAÑO'], ['4', 'LISTAR ACTIVOS Y ASIGNACION'],
+            ['5', 'REGRESAR AL MENU PRINCIPAL'])
+    print(tabulate(opts, tablefmt='grid'))
+
+    opt = input('Ingrese la opción:\n-> ')
+
+    
+    if opt not in options:
+        clear_screen()
+        print(f'La opción ({opt}) ingresada no es valida')
+        pause_screen()
+        clear_screen()
+        create_menu_reportes()
+    else:
+
+        if opt == '1':
+            report_all_actives()
+            create_menu_reportes()
+        if opt == '2':
+            report_list_category()
+            create_menu_reportes()
+        if opt == '3':
+            pass
+        
+        if opt == '4':
+            pass
+        
+        if opt == '5':
+            pass
 
 
 def create_menu_movimientos():
