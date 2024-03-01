@@ -20,7 +20,7 @@ def validar_nZona():
                 clear_screen()
                 validar_nZona()
             else: 
-                nombre_zona = input('Ingrese el nombre de la zona: ')
+                nombre_zona = input('Ingrese el nombre de la zona: ').capitalize()
                 # if nombre_zona in inventario['zonas'][nro_zona]['']:
                 #     print ('Nombre de zona ya registrado')
                 #     pause_screen()
@@ -57,7 +57,7 @@ def add_zonas():
     
     zona = {
         'NroZona': nro_zona,
-        'NombreZona': nombre_zona,
+        'NombreZona': nombre_zona.capitalize(),
         'CapacidadZona': capacidad_zona,
         'ExCPU': 0,
         'ExMON': 0,

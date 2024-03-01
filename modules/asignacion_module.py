@@ -7,7 +7,7 @@ def validar_Nasignacion():
     try:
         numero_asignacion = int(input('Ingrese el numero de la asignacion: '))
         if numero_asignacion in inventario['asignaciones'] :
-            print('El numero de asignacion ya se encuentra reguistrado')
+            print('El numero de asignacion ya se encuentra registrado')
             pause_screen()
             clear_screen()
             return validar_Nasignacion()
@@ -74,7 +74,42 @@ def validar_zona_asignada():
 
 def validar_activo():
     inventario = cf.read_file('inventario.json') 
-    CodCampus=input('Ingrese el CodCampus del activo')
+    asignados={}
+    asig=True
+    while asig:
+        CodCampus=input('Ingrese el CodCampus del activo')
+        if CodCampus not in inventario['activos']:
+            print('El codigo ingresado no corresponde a algun activo')
+            pause_screen()
+            clear_screen()
+            validar_activo()
+        else:
+            estado=inventario['activos'][CodCampus]['estado']
+            nombre=inventario['activos'][CodCampus]['name_activo']
+            if estado=='0':
+                
+                inventario['activos'][CodCampus]['estado']='1'
+                asignados.update({CodCampus:nombre})
+                asig=bool(input('Desea agregar otro activo? s(si) enter(no)'))
+            else:
+                if estado=='1':
+                    print('El activo ya se encuentra asignado')
+                    pause_screen()
+                    clear_screen()
+                    validar_activo()
+                elif estado=='2':
+                    print('El activo se encuentra dado de Baja')
+                    pause_screen()
+                    clear_screen()
+                    validar_activo()
+                elif estado=='3':
+                    print('El activo se encuentra en reparacion y/o Garantia')
+                    pause_screen()
+                    clear_screen()
+                    validar_activo()
+        
+    return asignados
+
 def agregar_asignacion():
 
     inventario = cf.read_file('inventario.json') 
@@ -86,19 +121,22 @@ def agregar_asignacion():
         nombre=inventario['personal'][id]['name']
     else:
         id= validar_zona_asignada()
-        nombre= inventario['zonas'][id]['Nombre Zona']
+        nombre= inventario['zonas'][id]['NombreZona']
+    activos_asignados=validar_activo()
 
     # NO SE DEBE PERMITIR ASIGNAR ACTIVOS(FALSOS POSITIVOS) QUE SE ENCUENTREN DADOS DE BAJA
     # PARA ASIGNAR UN EQUIPO ESTE DEBE ESTAR EN ESTADO NO ASIGNADO.
+    #CodCampus=validar_activo
 
     asignacion={
         'nAsignacion':str(numero_asignacion).zfill(3),
-        'FechaAsignación':fecha_asignacion,
+        'FechaAsignacion':fecha_asignacion,
         'TipoAsignacion ':tipo_asignacion,
-        'AsignadoA':[id,nombre],
-        'Activos':''
+        'AsignadoA':[id,nombre.capitalize()],
+        'Activos':activos_asignados
     }
-    print(asignacion)
+    inventario.get('asignaciones').update({str(numero_asignacion).zfill(3):asignacion})
+    cf.update_file('inventario.json', inventario)
 
 
 

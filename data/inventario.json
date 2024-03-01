@@ -1,20 +1,5 @@
 {
     "activos": {
-        "cp001": {
-            "cod_campus": "cp001",
-            "cod_transaccion": "fsfs",
-            "nro_formulario": "sdfsf",
-            "nro_serial": "54fs",
-            "name_activo": "cpu",
-            "ubicacion_activo": "no_asignada",
-            "marca": "comsdasd",
-            "categoria": "computador",
-            "estado": "no_asignado",
-            "proveedor": "123456",
-            "valor": 50,
-            "empresa_resp": "campus",
-            "tipo": "sfsdf"
-        },
         "cp002": {
             "cod_campus": "cp002",
             "cod_transaccion": "ljgdl4",
@@ -29,17 +14,35 @@
             "valor": 50,
             "empresa_resp": "campus",
             "tipo": "cpu"
+        },
+        "cp001": {
+            "cod_campus": "cp001",
+            "cod_transaccion": "354",
+            "nro_formulario": "1354",
+            "nro_serial": "35",
+            "name_activo": "CPU",
+            "ubicacion_activo": "no_asignada",
+            "marca": "ugjhgjh",
+            "categoria": "cpu",
+            "estado": "0",
+            "proveedor": "123456",
+            "valor": 52,
+            "empresa_resp": "52",
+            "tipo": "kjhk"
         }
     },
     "personal": {
         "567": {
             "id": "567",
-            "name": "compumax",
-            "email": "dsvfvcx",
-            "tel_movil": "dfd",
-            "tel_casa": "fd",
-            "tel_personal": "gfd",
-            "tel_oficina": "gf"
+            "tipo": "Natural",
+            "name": "dasfs",
+            "email": "sfas",
+            "telefonos": {
+                "tel_movil": "",
+                "tel_casa": "",
+                "tel_personal": "dadad25456",
+                "tel_oficina": "1235"
+            }
         },
         "123456": {
             "id": "123456",
@@ -56,14 +59,27 @@
     },
     "zonas": {
         "1": {
-            "Nro Zona": "1",
-            "Nombre Zona": "apolo",
-            "Capacidad Zona": 20,
-            "Ex CPU": 0,
-            "Ex MON": 0,
-            "Ex MOU": 0,
-            "Ex TEC": 0
+            "NroZona": "1",
+            "NombreZona": "Apolo",
+            "CapacidadZona": 20,
+            "ExCPU": 0,
+            "ExMON": 0,
+            "ExMOU": 0,
+            "ExTEC": 0
         }
     },
-    "asignaciones": {}
+    "asignaciones": {
+        "001": {
+            "nAsignacion": "001",
+            "FechaAsignacion": "20/02/2024",
+            "TipoAsignacion ": "zona",
+            "AsignadoA": [
+                "1",
+                "Apolo"
+            ],
+            "Activos": {
+                "cp001": "CPU"
+            }
+        }
+    }
 }
