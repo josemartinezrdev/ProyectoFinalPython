@@ -129,14 +129,14 @@ def create_menu_apz(nombre:str, inventario:dict):
 
         elif opt == '4':
             if nombre == 'ACTIVOS':
-                # cf.search_data_apz(nombre)
-                pass
+                cf.search_data_apz(nombre)
+                create_menu_apz(nombre, inventario)
             elif nombre == 'PERSONAL':
-                # cf.search_data_apz(nombre)
-                pass
+                cf.search_data_apz(nombre)
+                create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                # cf.delete_data_apz(nombre)
-                pass
+                cf.delete_data_apz(nombre)
+                create_menu_apz(nombre, inventario)
 
         elif opt == '5':
             pass

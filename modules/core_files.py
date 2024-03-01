@@ -2,6 +2,8 @@ import json
 import os
 
 BASE = 'data/'
+global count
+count = 0
 
 # GENERALES
 
@@ -57,17 +59,8 @@ def edit_file_apz(nombre):
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
 
-def buscar_zona():
-
-    inventario = read_file('inventario.json')
-
-    valor = input("Ingrese la zona a buscar -> ")
-    result= inventario['zonas'].get(valor)
-    nro_zona,nombre_zona,capacidad_zona,  = result.values()
-    print(f'{result}')
-    os.system('pause')
-
 def delete_data_apz(nombre):
+    os.system('clear')
 
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
@@ -79,6 +72,50 @@ def delete_data_apz(nombre):
     inventario = read_file('inventario.json')
 
     delete_value = input(msg)
-    
-    inventario[nombre.lower()].pop(delete_value)
-    update_file('inventario.json', inventario)
+
+    if delete_value not in inventario[nombre.lower()]:
+        global count
+        count += 1
+        print(f'El dato que ingresa no esta registrado | Intento {count}/3')
+        os.system('pause')
+        if count > 2:
+            count = 0
+            return
+        delete_data_apz(nombre)
+    else:
+        inventario[nombre.lower()].pop(delete_value)
+        update_file('inventario.json', inventario)
+
+def search_data_apz(nombre):
+
+    if nombre == 'ACTIVOS':
+        msg = 'Ingrese el "Código campus" del activo que va a buscar\n-> '
+    elif nombre == 'PERSONAL':
+        msg = 'Ingrese el "id" de la persona / proveedor que va a buscar\n-> '
+    elif nombre == 'ZONAS':
+        msg = 'Ingrese el "Número de zona" de la zona que va a buscar\n-> '
+
+    inventario = read_file('inventario.json')
+
+    search_value = input(msg)
+
+    if search_value not in inventario[nombre.lower()]:
+        global count
+        count += 1
+        print(f'El dato que ingresa no esta registrado | Intento {count}/3')
+        os.system('pause')
+        if count > 2:
+            count = 0
+            return
+        search_data_apz(nombre)
+    else:
+        print('VALORES\n')
+        for item, value in (inventario[nombre.lower()][search_value]).items():
+            if type(value) == dict:
+                print(f'{item}:\n')
+                for item2, value2 in value.items():
+                    print(f'    {item2}: {value2}\n')
+            else:
+                print(f'{item}: {value}\n')
+        print('-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-')
+        os.system('pause')
