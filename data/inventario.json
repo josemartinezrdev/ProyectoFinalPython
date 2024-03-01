@@ -2,84 +2,89 @@
     "activos": {
         "cp002": {
             "cod_campus": "cp002",
-            "cod_transaccion": "ljgdl4",
-            "nro_formulario": "dgd54g6d",
-            "nro_serial": "4g5d6g12",
-            "name_activo": "4g56g2d",
+            "cod_transaccion": "camper2024",
+            "nro_formulario": "2",
+            "nro_serial": "002",
+            "name_activo": "PC-CAMPUS-2",
             "ubicacion_activo": "no_asignada",
-            "marca": "compumax",
-            "categoria": "equipo de computo",
+            "marca": "LENOVO",
+            "categoria": "Equipo de computo",
             "estado": "no_asignado",
-            "proveedor": "123456",
-            "valor": 50,
-            "empresa_resp": "campus",
-            "tipo": "cpu"
+            "proveedor": "LENOVO",
+            "valor": 1200000,
+            "empresa_resp": "Campuslands",
+            "tipo": "Monitor"
+        },
+        "cp003": {
+            "cod_campus": "cp003",
+            "cod_transaccion": "camper2024",
+            "nro_formulario": "3",
+            "nro_serial": "003",
+            "name_activo": "TEC-CAMPUS-1",
+            "ubicacion_activo": "no_asignada",
+            "marca": "COMPUMAX",
+            "categoria": "Equipo de escritura",
+            "estado": "no_asignado",
+            "proveedor": "COMPUMAX",
+            "valor": 300000,
+            "empresa_resp": "Campuslands",
+            "tipo": "Teclado"
         },
         "cp001": {
             "cod_campus": "cp001",
-            "cod_transaccion": "354",
-            "nro_formulario": "1354",
-            "nro_serial": "35",
-            "name_activo": "CPU",
+            "cod_transaccion": "46465",
+            "nro_formulario": "3213",
+            "nro_serial": "1332",
+            "name_activo": "545",
             "ubicacion_activo": "no_asignada",
-            "marca": "ugjhgjh",
+            "marca": "csdf",
             "categoria": "cpu",
             "estado": "0",
-            "proveedor": "123456",
+            "proveedor": "zona",
             "valor": 52,
-            "empresa_resp": "52",
-            "tipo": "kjhk"
+            "empresa_resp": "jgj",
+            "tipo": "cpu",
+            "historial": {}
         }
     },
     "personal": {
-        "567": {
-            "id": "567",
+        "PER001": {
+            "id": "PER001",
             "tipo": "Natural",
-            "name": "dasfs",
-            "email": "sfas",
+            "name": "Pepito Perez",
+            "email": "pepito.perez@gmail.com",
             "telefonos": {
-                "tel_movil": "",
-                "tel_casa": "",
-                "tel_personal": "dadad25456",
-                "tel_oficina": "1235"
+                "tel_movil": "3166791419",
+                "tel_casa": "0406",
+                "tel_personal": "No aplica",
+                "tel_oficina": "123321"
             }
         },
-        "123456": {
-            "id": "123456",
-            "tipo": "Natural",
-            "name": "juan",
-            "email": "sdfgh",
+        "PER002": {
+            "id": "PER002",
+            "tipo": "Juridica",
+            "name": "Pedrito Mendez",
+            "email": "pedrito.mendez@gmail.com",
             "telefonos": {
-                "tel_movil": "46456",
-                "tel_casa": "546",
-                "tel_personal": "4565",
-                "tel_oficina": "456"
+                "tel_movil": "No aplica",
+                "tel_casa": "No aplica",
+                "tel_personal": "3158421073",
+                "tel_oficina": "009987"
+            }
+        },
+        "PER003": {
+            "id": "PER003",
+            "tipo": "Natural",
+            "name": "Fulanito De Tal",
+            "email": "fulanito.detal@gmail.com",
+            "telefonos": {
+                "tel_movil": "No aplica",
+                "tel_casa": "1163960490",
+                "tel_personal": "3148754512",
+                "tel_oficina": "No aplica"
             }
         }
     },
-    "zonas": {
-        "1": {
-            "NroZona": "1",
-            "NombreZona": "Apolo",
-            "CapacidadZona": 20,
-            "ExCPU": 0,
-            "ExMON": 0,
-            "ExMOU": 0,
-            "ExTEC": 0
-        }
-    },
-    "asignaciones": {
-        "001": {
-            "nAsignacion": "001",
-            "FechaAsignacion": "20/02/2024",
-            "TipoAsignacion ": "zona",
-            "AsignadoA": [
-                "1",
-                "Apolo"
-            ],
-            "Activos": {
-                "cp001": "CPU"
-            }
-        }
-    }
+    "zonas": {},
+    "asignaciones": {}
 }

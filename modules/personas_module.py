@@ -12,20 +12,33 @@ def add_personas():
     if opt == "1":
         tipo = 'Natural'
     elif opt == "2":
-        tipo = "Jurídica"
+        tipo = "Juridica"
     clear_screen()
     name = input('Ingrese nombre de la persona\n-> ')
     clear_screen()
     email = input(f'Ingrese el email de {name}\n-> ')
     clear_screen()
-    tel_movil = input(f'Ingrese teléfono movil de {name}\n-> ')
-    clear_screen()
-    tel_casa = input(f'Ingrese teléfono fijo de {name}\n-> ')
-    clear_screen()
-    tel_personal = input(f'Ingrese teléfono personal de {name}\n-> ')
-    clear_screen()
-    tel_oficina = input(f'Ingrese teléfono oficina de {name}\n-> ')
-    clear_screen()
+
+    if input('Tiene teléfono movil? Si(s) / No(Enter) \n-> ').lower() == 's':
+        tel_movil = input(f'Ingrese teléfono movil de {name}\n-> ')
+        clear_screen()
+    else: 
+        tel_movil = 'No aplica'
+    if input('Tiene teléfono en casa? Si(s) / No(Enter) \n-> ').lower() == 's':
+        tel_casa = input(f'Ingrese teléfono de cada de {name}\n-> ')
+        clear_screen()
+    else: 
+        tel_casa = 'No aplica'
+    if input('Tiene teléfono personal? Si(s) / No(Enter) \n-> ').lower() == 's':
+        tel_personal = input(f'Ingrese teléfono personal de {name}\n-> ')
+        clear_screen()
+    else: 
+        tel_personal = 'No aplica'
+    if input('Tiene teléfono de oficina? Si(s) / No(Enter) \n-> ').lower() == 's':
+        tel_oficina = input(f'Ingrese teléfono de oficina de {name}\n-> ')
+        clear_screen()
+    else: 
+        tel_oficina = 'No aplica'
 
     persona = {
         'id': id,
