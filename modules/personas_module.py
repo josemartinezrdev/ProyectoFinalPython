@@ -22,7 +22,7 @@ def add_personas():
             print(f'La opción "{opt}" no es valida solo se acepta 1 ó 2')
             add_personas()
         clear_screen()
-        name = input('Ingrese nombre de la persona\n-> ')
+        name = input('Ingrese nombre del empleado\n-> ')
         clear_screen()
         email = input(f'Ingrese el email de {name}\n-> ')
         clear_screen()

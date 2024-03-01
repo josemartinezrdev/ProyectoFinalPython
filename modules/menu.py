@@ -145,10 +145,6 @@ def create_menu_apz(nombre: str, inventario: dict):
     return True
 
 
-def create_menu_zonas():
-    pass
-
-
 def create_menu_asignar(inventario: dict):
     clear_screen()
     title = f"""
@@ -186,4 +182,34 @@ def create_menu_reportes():
 
 
 def create_menu_movimientos():
-    pass
+    clear_screen()
+    title = f"""
+    +++++++++++++++++++++++++++++++
+    +       MENÚ MOVIMIENTOS      +
+    +++++++++++++++++++++++++++++++
+    """
+    options = ['1', '2', '3', '4', '5']
+
+    print(title)
+
+    opts = (['1', 'CREAR ASIGNACION'], ['2', 'BUSCAR'],
+            ['3', 'REGRESAR AL MENÚ PRINCIPAL'])
+    print(tabulate(opts, tablefmt='grid'))
+
+    opt = input('Ingrese la opción:\n-> ')
+    if opt not in options:
+        clear_screen()
+        print(f'La opción ({opt}) ingresada no es valida')
+        pause_screen()
+        clear_screen()
+    else:
+        if opt == '1':
+            add_asignacion()
+        elif opt == '2':
+            pass
+        elif opt == '3':
+            pass
+        elif opt == '4':
+            pass
+        elif opt == '5':
+            return
