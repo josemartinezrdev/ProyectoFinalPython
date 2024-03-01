@@ -1,6 +1,6 @@
 from modules.menu import create_menu
-import modules.core_files as cf
-import modules.activos_module as acm
+from modules.core_files import check_file, read_file
+from modules.activos_module import clear_screen
 
 
 inventario = {
@@ -11,9 +11,9 @@ inventario = {
 }
 
 def main():
-    acm.clear_screen()
-    cf.check_file("inventario.json",inventario)
-    create_menu(cf.read_file("inventario.json"))
-    acm.clear_screen()
+    clear_screen()
+    check_file("inventario.json", inventario)
+    create_menu(read_file("inventario.json"))
+    clear_screen()
 if __name__ == "__main__":
     main()

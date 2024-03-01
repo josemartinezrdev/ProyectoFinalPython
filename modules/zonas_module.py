@@ -1,8 +1,8 @@
-import modules.core_files as cf
+from modules.core_files import read_file, update_file
 from modules.activos_module import clear_screen, pause_screen
 
 def validar_num_zona():
-    inventario = cf.read_file('inventario.json')
+    inventario = read_file('inventario.json')
     nro_zona = int(input('Ingrese el número de la zona:\n-> '))
     nombre_zona = ''
     
@@ -49,7 +49,7 @@ def validar_capacidad():
     return capacidad_zona
 
 def add_zonas():
-    inventario = cf.read_file('inventario.json')
+    inventario = read_file('inventario.json')
     nro_zona, nombre_zona = validar_num_zona()
     capacidad_zona = validar_capacidad()
     
@@ -64,5 +64,5 @@ def add_zonas():
     }
 
     inventario.get('zonas').update({nro_zona:zona})
-    cf.update_file('inventario.json', inventario)
+    update_file('inventario.json', inventario)
     return

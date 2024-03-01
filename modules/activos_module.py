@@ -1,5 +1,5 @@
 import os, sys
-import modules.core_files as cf
+from modules.core_files import read_file, update_file
 
 #AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
@@ -19,7 +19,7 @@ def pause_screen():
 
 def add_activos():
 
-    inventario = cf.read_file('inventario.json')
+    inventario = read_file('inventario.json')
 
     cod_campus = input('Ingrese el código de campus\n-> ')
     clear_screen()
@@ -77,6 +77,6 @@ def add_activos():
         }
 
         inventario.get('activos').update({cod_campus: activo}) 
-        cf.update_file('inventario.json', inventario)
+        update_file('inventario.json', inventario)
 
         return True

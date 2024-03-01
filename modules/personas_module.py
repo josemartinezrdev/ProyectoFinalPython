@@ -1,9 +1,9 @@
-import modules.core_files as cf
-from modules.activos_module import clear_screen, pause_screen
+from modules.core_files import read_file, update_file
+from modules.activos_module import clear_screen
 
 def add_personas():
 
-    inventario = cf.read_file('inventario.json')
+    inventario = read_file('inventario.json')
 
 
     id = input('Ingrese id/cc de la persona\n-> ') 
@@ -54,7 +54,7 @@ def add_personas():
         }
 
     inventario.get('personal').update({id:persona})
-    cf.update_file('inventario.json', inventario)
+    update_file('inventario.json', inventario)
 
 
 #' Usar este código cuando necesite añadir o editar el estado.
