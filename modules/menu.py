@@ -102,7 +102,7 @@ def create_menu_apz(nombre:str, inventario:dict):
                 pem.add_personas()
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                zom.validar_nZona()
+                zom.add_zonas()
                 create_menu_apz(nombre, inventario)
 
         elif opt == '2':
@@ -135,7 +135,7 @@ def create_menu_apz(nombre:str, inventario:dict):
                 cf.search_data_apz(nombre)
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                cf.delete_data_apz(nombre)
+                cf.search_data_apz(nombre)
                 create_menu_apz(nombre, inventario)
 
         elif opt == '5':

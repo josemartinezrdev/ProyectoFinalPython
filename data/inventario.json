@@ -85,6 +85,16 @@
             }
         }
     },
-    "zonas": {},
+    "zonas": {
+        "1": {
+            "nro_zona": "1",
+            "nombre_zona": "Apolo",
+            "capacidad_zona": 45,
+            "ex_cpu": 0,
+            "ex_mon": 0,
+            "ex_mou": 0,
+            "ex_tec": 0
+        }
+    },
     "asignaciones": {}
 }
