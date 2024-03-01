@@ -3,7 +3,6 @@ from modules.core_files import read_file, update_file, clear_screen, pause_scree
 def validar_num_zona():
     inventario = read_file('inventario.json')
     
-    
     try:
         nro_zona = int(input('Ingrese el número de la zona:\n-> '))
         nombre_zona = ''

@@ -47,6 +47,11 @@ def edit_file_apz(nombre):
 
     inventario = read_file('inventario.json')
 
+    if len(inventario.get(nombre.lower())) == 0:
+        print('Aun no hay datos que editar')
+        pause_screen()
+        return
+
     palabra = input(msg)
     
     if nombre.lower() in inventario:
@@ -54,28 +59,28 @@ def edit_file_apz(nombre):
             data = inventario[nombre.lower()][palabra]
 
             for key, value in data.items():
-                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'Nro Zona', 'Ex CPU', 'Ex MON', 'Ex MOU', 'Ex TEC']:
+                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec']:
                     if type(data[key]) == dict:
                         if(type(data[key]) == dict):
                             for key2 in data[key].keys():
                                 if input(f'Desea modificar el {key2}? s(si) / Enter(no)\n-> ').lower() == 's':
-                                    os.system('cls')
+                                    clear_screen()
                                     data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
-                                    os.system('cls')
+                                    clear_screen()
                     else:
                         if input(f'Desea modificar el {key}? s(si) / Enter(no)\n-> ').lower() == 's':
-                            os.system('cls')
+                            clear_screen()
                             data[key] = input(f'Ingrese el nuevo valor para {key}:\n-> ')
-                            os.system('cls')
+                            clear_screen()
 
             inventario[nombre.lower()][palabra] = data
             update_file('inventario.json', inventario)
-            os.system('pause')
+            pause_screen()
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
 
 def delete_data_apz(nombre):
-    os.system('clear')
+    clear_screen()
 
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a eliminar\n-> '
@@ -86,13 +91,18 @@ def delete_data_apz(nombre):
 
     inventario = read_file('inventario.json')
 
+    if len(inventario.get(nombre.lower())) == 0:
+        print('Aun no hay datos que eliminar')
+        pause_screen()
+        return
+
     delete_value = input(msg)
 
     if delete_value not in inventario[nombre.lower()]:
         global count
         count += 1
         print(f'El dato que ingresó no esta registrado | Intento {count}/3')
-        os.system('pause')
+        pause_screen()
         if count > 2:
             count = 0
             return
@@ -103,6 +113,8 @@ def delete_data_apz(nombre):
 
 def search_data_apz(nombre):
 
+    inventario = read_file('inventario.json')
+
     if nombre == 'ACTIVOS':
         msg = 'Ingrese el "Código campus" del activo que va a buscar\n-> '
     elif nombre == 'PERSONAL':
@@ -110,7 +122,10 @@ def search_data_apz(nombre):
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a buscar\n-> '
 
-    inventario = read_file('inventario.json')
+    if len(inventario.get(nombre.lower())) == 0:
+        print('Aun no hay datos que buscar')
+        pause_screen()
+        return
 
     search_value = input(msg)
 
@@ -118,7 +133,7 @@ def search_data_apz(nombre):
         global count
         count += 1
         print(f'El dato que ingresó no esta registrado | Intento {count}/3')
-        os.system('pause')
+        pause_screen()
         if count > 2:
             count = 0
             return
@@ -133,4 +148,4 @@ def search_data_apz(nombre):
             else:
                 print(f'{item}: {value}\n')
         print('-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n')
-        os.system('pause')
+        pause_screen()
