@@ -1,20 +1,5 @@
 {
     "activos": {
-        "cp001": {
-            "cod_campus": "cp001",
-            "cod_transaccion": "camper2024",
-            "nro_formulario": "1",
-            "nro_serial": "001",
-            "name_activo": "PC-CAMPUS-1",
-            "ubicacion_activo": "no_asignada",
-            "marca": "COMPUMAX",
-            "categoria": "Equipo de computo",
-            "estado": "no_asignado",
-            "proveedor": "COMPUMAX",
-            "valor": 1500000,
-            "empresa_resp": "Campuslands",
-            "tipo": "Monitor"
-        },
         "cp002": {
             "cod_campus": "cp002",
             "cod_transaccion": "camper2024",
@@ -44,6 +29,22 @@
             "valor": 300000,
             "empresa_resp": "Campuslands",
             "tipo": "Teclado"
+        },
+        "cp001": {
+            "cod_campus": "cp001",
+            "cod_transaccion": "46465",
+            "nro_formulario": "3213",
+            "nro_serial": "1332",
+            "name_activo": "545",
+            "ubicacion_activo": "no_asignada",
+            "marca": "csdf",
+            "categoria": "cpu",
+            "estado": "0",
+            "proveedor": "zona",
+            "valor": 52,
+            "empresa_resp": "jgj",
+            "tipo": "cpu",
+            "historial": {}
         }
     },
     "personal": {

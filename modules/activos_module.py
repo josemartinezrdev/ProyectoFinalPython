@@ -68,11 +68,12 @@ def add_activos():
             'ubicacion_activo': 'no_asignada',
             'marca': marca,
             'categoria': categoria,
-            'estado': 'no_asignado',
+            'estado': '0', # lo cambie xd 
             'proveedor': proveedor,
             'valor': valor,
             'empresa_resp': empresa_resp,
-            'tipo': tipo
+            'tipo': tipo,
+            'historial':{}
         }
 
         inventario.get('activos').update({cod_campus: activo}) 

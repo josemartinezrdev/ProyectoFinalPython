@@ -168,6 +168,7 @@ def create_menu_asignar(inventario:dict):
         acm.clear_screen()
         create_menu_asignar(inventario)
     else:
+        
         if opt=='1':
             asm.agregar_asignacion()
         elif opt=='2':
