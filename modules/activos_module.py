@@ -33,7 +33,7 @@ def add_activos():
 
             marca = input('Ingrese la "Marca"\n-> ')
             clear_screen()
-            categoria = input('Ingrese la "Categoría#\n-> ')
+            categoria = input('Ingrese la "Categoría"\n-> ')
             clear_screen()
             # , Estado
 

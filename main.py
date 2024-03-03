@@ -1,7 +1,6 @@
 from modules.menu import create_menu
 from modules.core_files import check_file, read_file, clear_screen
 
-
 inventario = {
     'activos': {},
     'personal': {},
@@ -16,5 +15,3 @@ def main():
     clear_screen()
 if __name__ == "__main__":
     main()
-
-  
