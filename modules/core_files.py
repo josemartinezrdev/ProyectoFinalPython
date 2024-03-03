@@ -131,7 +131,7 @@ def search_data_apza(nombre):
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a buscar\n-> '
     elif nombre == 'ASIGNACIONES':
-        msg = 'Ingrese el "id" de la persona de la que quiere ver sus asignaciones'
+        msg = 'Ingrese el "id" / "número de zona" de la persona / zona que desea buscar'
 
     if len(inventario.get(nombre.lower())) == 0:
         print('Aun no hay datos que buscar')

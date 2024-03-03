@@ -38,7 +38,7 @@ def validar_id():
             if opcion in list_opciones:
                 if opcion == 's':
                         asignados.append(activo)
-                        validar_activo(asignados)
+                        activo=validar_activo(asignados)
                 else: 
                     if opcion == 'n':
                         asignados.append(activo)
@@ -68,19 +68,19 @@ def validar_zona_asignada():
             activo = validar_activo(asignados)
             if (activo[:2] == 'cp')and (inventario['zonas'][opcion_zona]['ex_cpu']) == capacidad:
                 print(f'Lo sentimos, la Capacidad de la zona {opcion_zona} para CPU se encuentra llena')
-                validar_activo(asignados)
+                validar_capacidad()
             else:
                 if activo[:3] == 'mou' and (inventario['zonas'][opcion_zona]['ex_mou']) == capacidad:
                     print(f'Lo sentimos, la Capacidad de la zona{opcion_zona} para Mouse se encuentra llena')
-                    validar_activo()
+                    validar_capacidad()
                 else:
                     if activo[:3] == 'mon' and (inventario['zonas'][opcion_zona]['ex_mon']) == capacidad:
                         print(f'Lo sentimos, la Capacidad de la zona{opcion_zona} para Monitores se encuentra llena')
-                        validar_activo()
+                        validar_capacidad()
                     else:
                         if activo[:2] == 'te' and (inventario['zonas'][opcion_zona]['ex_tec']) == capacidad:
                             print(f'Lo sentimos, la Capacidad de la zona{opcion_zona} para teclados se encuentra llena')
-                            validar_activo()
+                            validar_capacidad()
         validar_capacidad()
         global activo   
         
@@ -144,14 +144,12 @@ def add_asignacion():
     inventario = read_file('inventario.json')
     fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
     tipo_asignacion = val_tipo_asignacion()
-    # for i in activos_asignados:
-    #     inventario['activos'][i]['estado'] = '1'
     if tipo_asignacion == 'Personal':
         id_personas,asignados = validar_id()
-        for i in asignados:
-            inventario['activos'][i]['estado'] = '1'
         id = id_personas
         nombre = inventario['personal'][id]['name']
+        for i in asignados:
+                inventario['activos'][i]['estado'] = '1'
     else:
         opcion_zona,asignados = validar_zona_asignada()
         id = opcion_zona
@@ -170,13 +168,14 @@ def add_asignacion():
                     else: 
                         if asignados[i][:2] == 'te':
                             inventario['zonas'][id]['ex_tec'] += 1
-    
-
-    asignacion = {
-        'fecha_asignacion': fecha_asignacion,
-        'tipo_asignacion ': tipo_asignacion,
-        'asignado_a': [id, nombre.capitalize()],
-        'activos_asignados':asignados
-    }
-    inventario.get('asignaciones').update({id: asignacion})
+    if id in inventario['asignaciones']:
+        inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
+    else:
+        asignacion = {
+            'fecha_asignacion': fecha_asignacion,
+            'tipo_asignacion ': tipo_asignacion,
+            'asignado_a': [id, nombre.capitalize()],
+            'activos_asignados':asignados
+        }
+        inventario.get('asignaciones').update({id: asignacion})
     update_file('inventario.json', inventario)
