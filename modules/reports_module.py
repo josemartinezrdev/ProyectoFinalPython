@@ -1,4 +1,5 @@
 from modules.core_files import read_file, clear_screen, pause_screen
+import os
 
 def report_all_actives():
     inventario = read_file('inventario.json')
@@ -31,4 +32,25 @@ def report_list_category():
                     print(f'{cod} | {name}')
     pause_screen()
     clear_screen()
-    
+
+def report_baja_daños():
+    clear_screen()
+    inventario = read_file('inventario.json')
+
+    baja_daños = input('Ingrese el nombre de el activo: ')
+
+
+def report_list_activ_asig():
+    clear_screen()
+    inventario = read_file('inventario.json')
+
+    for key, value in (inventario.get('asignaciones')).items():
+        print(f'{key}:')
+        for key2, value2 in value.items():
+            if type(value2) == dict:
+                print(f'    {key2}:')
+                for key3, value3 in value2.items():
+                    print(f'        {key3}: {value3}') 
+            else:
+                print(f'    {key2}: {value2}')
+    pause_screen()

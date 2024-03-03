@@ -11,7 +11,7 @@ inventario = {
 def main():
     clear_screen()
     check_file("inventario.json", inventario)
-    create_menu(read_file("inventario.json"))
+    create_menu()
     clear_screen()
 if __name__ == "__main__":
 
