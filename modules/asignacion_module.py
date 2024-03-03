@@ -145,8 +145,6 @@ def add_asignacion():
     inventario = read_file('inventario.json')
     fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
     tipo_asignacion = val_tipo_asignacion()
-    # for i in activos_asignados:
-    #     inventario['activos'][i]['estado'] = '1'
     if tipo_asignacion == 'Personal':
         id_personas,asignados= validar_id()
         for i in asignados:
