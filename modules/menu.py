@@ -4,7 +4,8 @@ from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
 from modules.reports_module import report_all_actives, report_list_category
-from modules.core_files import edit_file_apz, delete_data_apz, search_data_apz, pause_screen, clear_screen
+from modules.movimientos_module import retorno_activo
+from modules.core_files import edit_file_apz, delete_data_apz, search_data_apza, pause_screen, clear_screen
 
 
 def create_menu(inventario: dict):
@@ -30,7 +31,7 @@ def create_menu(inventario: dict):
             '5', 'REPORTES'], ['6', 'MOVIMIENTO DE ACTIVOS'], ['7', 'SALIR'])
     print(tabulate(opts, tablefmt='grid'))
 
-    options = ['1', '2', '3', '4', '5', '6', '7', ]
+    options = ['1', '2', '3', '4', '5', '6', '7']
 
     opt = input('Ingrese la opción:\n-> ')
     if opt not in options:
@@ -72,13 +73,6 @@ def create_menu_apz(nombre: str, inventario: dict):
     +       MENÚ {nombre}       +
     ++++++++++++++++++++++++++++
     """
-
-    # 1. AGREGAR
-    # 2. EDITAR
-    # 3. ELIMINAR
-    # 4. BUSCAR
-    # 5. REGRESAR
-
     options = ['1', '2', '3', '4', '5']
 
     print(title)
@@ -132,13 +126,13 @@ def create_menu_apz(nombre: str, inventario: dict):
 
         elif opt == '4':
             if nombre == 'ACTIVOS':
-                search_data_apz(nombre)
+                search_data_apza(nombre)
                 create_menu_apz(nombre, inventario)
             elif nombre == 'PERSONAL':
-                search_data_apz(nombre)
+                search_data_apza(nombre)
                 create_menu_apz(nombre, inventario)
             elif nombre == 'ZONAS':
-                search_data_apz(nombre)
+                search_data_apza(nombre)
                 create_menu_apz(nombre, inventario)
 
         elif opt == '5':
@@ -173,7 +167,8 @@ def create_menu_asignar(inventario: dict):
         if opt == '1':
             add_asignacion()
         elif opt == '2':
-            pass
+            nombre = 'ASIGNACIONES'
+            search_data_apza(nombre)
         elif opt == '3':
             create_menu(inventario)
 
@@ -190,13 +185,13 @@ def create_menu_reportes():
     print(title)
 
     opts = (['1', 'LISTAR TODOS LOS ACTIVOS'], ['2', 'LISTAR ACTIVOS POR CATEGORIA'],
-            ['3', 'LISTAR ACTIVOS DADOS DE BAJA POR DAÑO'], ['4', 'LISTAR ACTIVOS Y ASIGNACION'],
+            ['3', 'LISTAR ACTIVOS DADOS DE BAJA POR DAÑO'], [
+                '4', 'LISTAR ACTIVOS Y ASIGNACION'],
             ['5', 'REGRESAR AL MENU PRINCIPAL'])
     print(tabulate(opts, tablefmt='grid'))
 
     opt = input('Ingrese la opción:\n-> ')
 
-    
     if opt not in options:
         clear_screen()
         print(f'La opción ({opt}) ingresada no es valida')
@@ -213,10 +208,10 @@ def create_menu_reportes():
             create_menu_reportes()
         if opt == '3':
             pass
-        
+
         if opt == '4':
             pass
-        
+
         if opt == '5':
             pass
 
@@ -244,7 +239,8 @@ def create_menu_movimientos():
         clear_screen()
     else:
         if opt == '1':
-            add_asignacion()
+            retorno_activo()
+            create_menu_movimientos()
         elif opt == '2':
             pass
         elif opt == '3':

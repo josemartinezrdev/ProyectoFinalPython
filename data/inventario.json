@@ -25,7 +25,7 @@
             "ubicacion_activo": "no_asignada",
             "marca": "compumax",
             "categoria": "mouse",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "compumax",
             "valor": 8,
             "empresa_resp": "campus",
@@ -76,7 +76,6 @@
                 "tel_casa": "0406",
                 "tel_personal": "No aplica",
                 "tel_oficina": "123321"
-
             }
         },
         "PER002": {
@@ -108,34 +107,49 @@
         "z001": {
             "nro_zona": "z001",
             "nombre_zona": "Apolo",
-            "capacidad_zona": 3,
-            "ex_cpu": 2,
-            "ex_mon": 1,
-            "ex_mou": 1,
+            "capacidad_zona": 5,
+            "ex_cpu": 3,
+            "ex_mon": 2,
+            "ex_mou": 2,
             "ex_tec": 3
         }
     },
     "asignaciones": {
-        "PER001": {
-            "fecha_asignacion": "kdhskd",
+        "PER002": {
+            "fecha_asignacion": "45121",
             "tipo_asignacion ": "Personal",
             "asignado_a": [
-                "PER001",
-                "Pepito perez"
+                "PER002",
+                "Pedrito mendez"
             ],
             "activos_asignados": [
+                "cp001",
                 "cp001"
             ]
         },
         "z001": {
-            "fecha_asignacion": "aldjals",
+            "fecha_asignacion": "6465",
             "tipo_asignacion ": "zona",
             "asignado_a": [
                 "z001",
                 "Apolo"
             ],
             "activos_asignados": [
-                "te001"
+                "mou001",
+                "mon001"
+            ]
+        },
+        "PER001": {
+            "fecha_asignacion": "2",
+            "tipo_asignacion ": "Personal",
+            "asignado_a": [
+                "PER001",
+                "Pepito perez"
+            ],
+            "activos_asignados": [
+                "mou001",
+                "te001",
+                "cp001"
             ]
         }
     }
