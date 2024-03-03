@@ -218,7 +218,7 @@ def create_menu_reportes():
             pass
         
         if opt == '5':
-            pass
+            create_menu()
 
 
 def create_menu_movimientos():

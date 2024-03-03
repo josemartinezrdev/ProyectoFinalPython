@@ -31,4 +31,8 @@ def report_list_category():
                     print(f'{cod} | {name}')
     pause_screen()
     clear_screen()
+
+
+
+    
     
