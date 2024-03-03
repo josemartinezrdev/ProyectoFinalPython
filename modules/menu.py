@@ -3,6 +3,7 @@ from modules.activos_module import add_activos
 from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
+from modules.movimientos_module import retorno_activo
 from modules.core_files import edit_file_apz, delete_data_apz, search_data_apz, pause_screen, clear_screen
 
 
@@ -192,8 +193,7 @@ def create_menu_movimientos():
 
     print(title)
 
-    opts = (['1', 'CREAR ASIGNACION'], ['2', 'BUSCAR'],
-            ['3', 'REGRESAR AL MENÚ PRINCIPAL'])
+    opts = (['1', 'CREAR ASIGNACION'], ['2', 'BUSCAR'], ['3', 'REGRESAR AL MENÚ PRINCIPAL'])
     print(tabulate(opts, tablefmt='grid'))
 
     opt = input('Ingrese la opción:\n-> ')
@@ -204,7 +204,8 @@ def create_menu_movimientos():
         clear_screen()
     else:
         if opt == '1':
-            add_asignacion()
+            retorno_activo()
+            create_menu_movimientos()
         elif opt == '2':
             pass
         elif opt == '3':
