@@ -1,11 +1,13 @@
 import json
-import sys, os
+import sys
+import os
 
 BASE = 'data/'
 global count
 count = 0
 
 # PANTALLA
+
 
 def clear_screen():
     if sys.platform == "linux" or sys.platform == "darwin":
@@ -22,19 +24,23 @@ def pause_screen():
 
 # GENERALES
 
+
 def check_file(archivo: str, data):
     if (not (os.path.isfile(BASE + archivo))):
         with open(BASE + archivo, "w") as bw:
             json.dump(data, bw, indent=4)
+
 
 def read_file(archivo: str):
     with open(BASE+archivo, 'r') as rf:
         inventario = json.load(rf)
     return inventario
 
+
 def update_file(archivo, data):
     with open(BASE + archivo, 'w') as fw:
         json.dump(data, fw, indent=4)
+
 
 def edit_file_apz(nombre):
 
@@ -53,7 +59,7 @@ def edit_file_apz(nombre):
         return
 
     palabra = input(msg)
-    
+
     if nombre.lower() in inventario:
         if palabra in inventario[nombre.lower()]:
             data = inventario[nombre.lower()][palabra]
@@ -61,11 +67,12 @@ def edit_file_apz(nombre):
             for key, value in data.items():
                 if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec']:
                     if type(data[key]) == dict:
-                        if(type(data[key]) == dict):
+                        if (type(data[key]) == dict):
                             for key2 in data[key].keys():
                                 if input(f'Desea modificar el {key2}? s(si) / Enter(no)\n-> ').lower() == 's':
                                     clear_screen()
-                                    data[key][key2] = input(f'Ingrese el nuevo valor para {key2} :')
+                                    data[key][key2] = input(
+                                        f'Ingrese el nuevo valor para {key2} :')
                                     clear_screen()
                     else:
                         if input(f'Desea modificar el {key}? s(si) / Enter(no)\n-> ').lower() == 's':
@@ -78,6 +85,7 @@ def edit_file_apz(nombre):
             pause_screen()
         else:
             print(f'No existe en {nombre.lower()}: {palabra}')
+
 
 def delete_data_apz(nombre):
     clear_screen()
@@ -111,7 +119,8 @@ def delete_data_apz(nombre):
         inventario[nombre.lower()].pop(delete_value)
         update_file('inventario.json', inventario)
 
-def search_data_apz(nombre):
+
+def search_data_apza(nombre):
 
     inventario = read_file('inventario.json')
 
@@ -121,6 +130,8 @@ def search_data_apz(nombre):
         msg = 'Ingrese el "id" de la persona que va a buscar\n-> '
     elif nombre == 'ZONAS':
         msg = 'Ingrese el "Número de zona" de la zona que va a buscar\n-> '
+    elif nombre == 'ASIGNACIONES':
+        msg = 'Ingrese el "id" de la persona de la que quiere ver sus asignaciones'
 
     if len(inventario.get(nombre.lower())) == 0:
         print('Aun no hay datos que buscar')
@@ -137,7 +148,7 @@ def search_data_apz(nombre):
         if count > 2:
             count = 0
             return
-        search_data_apz(nombre)
+        search_data_apza(nombre)
     else:
         print('VALORES\n')
         for item, value in (inventario[nombre.lower()][search_value]).items():
@@ -145,6 +156,14 @@ def search_data_apz(nombre):
                 print(f'{item}:\n')
                 for item2, value2 in value.items():
                     print(f'    {item2}: {value2}\n')
+            elif type(value) == list:
+                print(f'{item}:\n')
+                for item2, value2 in enumerate(value):
+                    if item2 == 0:
+                        item2 = 'ID: '
+                    elif item2 == 1:
+                        item2 = 'Nombre: '
+                    print(f'\t{item2}{value2}\n')
             else:
                 print(f'{item}: {value}\n')
         print('-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n')

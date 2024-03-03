@@ -1,4 +1,4 @@
-from core_files import read_file, clear_screen, pause_screen
+from modules.core_files import read_file, clear_screen, pause_screen
 
 
 def retorno_activo():
