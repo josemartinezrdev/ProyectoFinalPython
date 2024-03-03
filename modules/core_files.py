@@ -65,7 +65,7 @@ def edit_file_apz(nombre):
             data = inventario[nombre.lower()][palabra]
 
             for key, value in data.items():
-                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec']:
+                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec', 'ubicacion_activo']:
                     if type(data[key]) == dict:
                         if (type(data[key]) == dict):
                             for key2 in data[key].keys():
