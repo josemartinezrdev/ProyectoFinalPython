@@ -31,6 +31,38 @@
             "empresa_resp": "campus",
             "tipo": "mause",
             "historial": {}
+        },
+        "te001": {
+            "cod_campus": "te001",
+            "cod_transaccion": "464n",
+            "nro_formulario": "h146t5hy",
+            "nro_serial": "h54t6",
+            "name_activo": "teclado azul",
+            "ubicacion_activo": "no_asignada",
+            "marca": "compda",
+            "categoria": "teclado",
+            "estado": "1",
+            "proveedor": "compumax",
+            "valor": 50,
+            "empresa_resp": "campus",
+            "tipo": "teclado",
+            "historial": {}
+        },
+        "mon001": {
+            "cod_campus": "mon001",
+            "cod_transaccion": "464d",
+            "nro_formulario": "4654",
+            "nro_serial": "cdc4",
+            "name_activo": "monitor 15pg",
+            "ubicacion_activo": "no_asignada",
+            "marca": "compus",
+            "categoria": "monitor",
+            "estado": "0",
+            "proveedor": "cohdskhf",
+            "valor": 50,
+            "empresa_resp": "campus",
+            "tipo": "monitor",
+            "historial": {}
         }
     },
     "personal": {
@@ -75,23 +107,35 @@
         "z001": {
             "nro_zona": "z001",
             "nombre_zona": "Apolo",
-            "capacidad_zona": 45,
-            "ex_cpu": 0,
-            "ex_mon": 0,
-            "ex_mou": 0,
-            "ex_tec": 0
+            "capacidad_zona": 3,
+            "ex_cpu": 2,
+            "ex_mon": 1,
+            "ex_mou": 1,
+            "ex_tec": 3
         }
     },
     "asignaciones": {
         "PER001": {
-            "fecha_asignacion": "164",
+            "fecha_asignacion": "kdhskd",
             "tipo_asignacion ": "Personal",
             "asignado_a": [
                 "PER001",
                 "Pepito perez"
             ],
             "activos_asignados": [
+                "cp001",
                 "cp001"
+            ]
+        },
+        "z001": {
+            "fecha_asignacion": "aldjals",
+            "tipo_asignacion ": "zona",
+            "asignado_a": [
+                "z001",
+                "Apolo"
+            ],
+            "activos_asignados": [
+                "te001"
             ]
         }
     }
