@@ -9,7 +9,7 @@ def val_tipo_asignacion():
             tipo_asignacion = 'Personal'
             return tipo_asignacion
         elif opt =='2':
-            tipo_asignacion = 'zona'
+            tipo_asignacion = 'Zona'
             return tipo_asignacion
         else:
             print('Opción Incorrecta')

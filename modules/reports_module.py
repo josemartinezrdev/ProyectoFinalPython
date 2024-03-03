@@ -32,7 +32,13 @@ def report_list_category():
     pause_screen()
     clear_screen()
 
+def report_baja_daños():
+    clear_screen()
+    inventario = read_file('inventario.json')
 
+    baja_daños = input('Ingrese el nombre de el activo: ')
+
+    
 
     
     
