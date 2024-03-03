@@ -5,10 +5,10 @@
             "cod_transaccion": "46465",
             "nro_formulario": "3213",
             "nro_serial": "1332",
-            "name_activo": "545",
+            "name_activo": "activo1",
             "ubicacion_activo": "no_asignada",
             "marca": "csdf",
-            "categoria": "cpu",
+            "categoria": "mouse",
             "estado": "1",
             "proveedor": "zona",
             "valor": 52,
@@ -21,7 +21,7 @@
             "cod_transaccion": "8416",
             "nro_formulario": "646",
             "nro_serial": "6452",
-            "name_activo": "mouse",
+            "name_activo": "activo2",
             "ubicacion_activo": "no_asignada",
             "marca": "compumax",
             "categoria": "mouse",
@@ -76,6 +76,7 @@
                 "tel_casa": "0406",
                 "tel_personal": "No aplica",
                 "tel_oficina": "123321"
+
             }
         },
         "PER002": {
