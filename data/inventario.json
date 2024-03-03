@@ -63,6 +63,22 @@
             "empresa_resp": "campus",
             "tipo": "monitor",
             "historial": {}
+        },
+        "123": {
+            "cod_campus": "123",
+            "cod_transaccion": "555",
+            "nro_formulario": "67",
+            "nro_serial": "12f",
+            "name_activo": "PC",
+            "ubicacion_activo": "no_asignada",
+            "marca": "Lenovo",
+            "categoria": "Equipo de computo",
+            "estado": "0",
+            "proveedor": "Federico",
+            "valor": 77,
+            "empresa_resp": "Campuslands",
+            "tipo": "CPU",
+            "historial": {}
         }
     },
     "personal": {

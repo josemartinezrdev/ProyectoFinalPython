@@ -33,7 +33,7 @@ def add_activos():
 
             marca = input('Ingrese la "Marca"\n-> ')
             clear_screen()
-            categoria = input('Ingrese la "Categoría"\n-> ')
+            categoria = input('Ingrese la "Categoría"\n(Equipo de computo, Electrodomestico, Juego)\n-> ')
             clear_screen()
             # , Estado
 
@@ -54,7 +54,7 @@ def add_activos():
                     clear_screen()
                     empresa_resp = input('Ingrese la "Empresa Responsable" del activo\n-> ')
                     clear_screen()
-                    tipo = input('Ingrese el "Tipo" de activo\n-> ')
+                    tipo = input('Ingrese el "Tipo" de activo\n(Monitor, CPU, Teclado, Mouse,Aire Acondicionado,Portatil,Impresora)\n-> ')
 
                 activo = {
                     'cod_campus': cod_campus,
