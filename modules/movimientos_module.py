@@ -27,7 +27,8 @@ def movimiento(action):
     if estado != '0':
 
         inventario['activos'][act_return]['estado'] = state
-        inventario['activos'][act_return]['ubicacion_activo'] = 'no_asignada'
+        # inventario['activos'][act_return]['ubicacion_activo'] = 'no_asignada'
+        
 
         if estado == '1':
             ubicacion = input('Ingrese el "ID" / "Número Zona" de la persona / zona en la cual se encuentra asignado el activo\n-> ')
