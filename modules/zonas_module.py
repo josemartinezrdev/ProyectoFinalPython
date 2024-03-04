@@ -12,8 +12,8 @@ def validar_num_zona():
             clear_screen()
             validar_num_zona()
         else: 
-            nro_zona=str(nro_zona).zfill(3)
-            nro_zona = 'z'+nro_zona
+            nro_zona = str(nro_zona).zfill(3)
+            nro_zona = 'z' + nro_zona
             if nro_zona in inventario['zonas']:
                 print('Zona ya registrada')
                 pause_screen()

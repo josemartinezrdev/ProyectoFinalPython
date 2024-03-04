@@ -1,6 +1,4 @@
-import json
-import sys
-import os
+import json, sys, os
 
 BASE = 'data/'
 global count
