@@ -1,4 +1,25 @@
 from modules.core_files import read_file, update_file, clear_screen, pause_screen
+
+def history(fecha:str, tipo:str, code_act:str, text:str, re=False):
+
+    inventario = read_file('inventario.json')
+
+
+    if tipo == 'baja':
+        tipo = '2'
+    elif tipo == 'gar':
+        tipo = '3'
+
+    historial = {
+        'id': len(inventario.get('activos').get(code_act).get('historial'))+1,
+        'fecha': fecha,
+        'tipo': tipo,
+        'id_resp': text
+    }
+
+    inventario.get('activos').get(code_act).get('historial').update({historial['id']:historial})
+    return inventario
+
 # valida el tipo de asignaciones
 def val_tipo_asignacion():
     print('Ingrese el tipo de asignación que desea registrar: ')
@@ -23,7 +44,11 @@ def validar_id(code='', check=False):
         nombre = inventario.get('personal').get(id_persona).get('name')
         print(nombre)
         activo = validar_activo(asignados, code, check)
-        op = True
+
+        if check == False:
+            op = True
+        elif check == True:
+            op = False
         while op:
             list_opciones = ['s','n']                
             opcion = input('Desea agregar otro activo? s(Si) n(No)').lower()
@@ -74,9 +99,10 @@ def validar_zona_asignada(code='', check=False):
                             validar_capacidad(code, check)
         validar_capacidad(code, check)
         global activo 
-        print(activo)
-        pause_screen()
-        op = True
+        if check == False:
+            op = True
+        elif check == True:
+            op = False
         while op:
             list_opciones = ['s','n']                
             opcion = input('Desea ingresar otro activo? s(Si) n(No)').lower()
@@ -140,8 +166,10 @@ def add_asignacion(code='', check=False):
     inventario = read_file('inventario.json')
     if check == True:
         fecha_asignacion = str(input('Ingrese la Fecha de la reasignación: '))
+        tipo = '4'
     elif check == False:
         fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
+        tipo = '1'
     tipo_asignacion = val_tipo_asignacion()
     if tipo_asignacion == 'Personal':
         id_personas, asignados = validar_id(code, check)
@@ -149,8 +177,6 @@ def add_asignacion(code='', check=False):
         nombre = inventario['personal'][id]['name']
     else:
         opcion_zona, asignados = validar_zona_asignada(code, check)
-        print(opcion_zona, asignados)
-        pause_screen()
         id = opcion_zona
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):
@@ -171,7 +197,6 @@ def add_asignacion(code='', check=False):
 
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
-        print(asignados)
         pause_screen()
     else:
         asignacion = {
@@ -183,4 +208,12 @@ def add_asignacion(code='', check=False):
         inventario.get('asignaciones').update({id:asignacion})
         # if len(inventario.get('asignaciones').get(id).get('activos_asignados')) == 0:
         #     inventario.get('asignaciones').pop(id)
+    
+
     update_file('inventario.json', inventario)
+
+    for idx in range(len(asignados)):
+        inventario = history(fecha_asignacion, tipo, asignados[idx], id)
+        update_file('inventario.json', inventario)
+    pause_screen()
+
