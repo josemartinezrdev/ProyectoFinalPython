@@ -25,7 +25,7 @@
             "ubicacion_activo": "no_asignada",
             "marca": "COMPUMAX",
             "categoria": "Equipo de computo",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "COMPUMAX",
             "valor": 1000000,
             "empresa_resp": "Campuslands",
@@ -207,6 +207,22 @@
             "empresa_resp": "Campuslands",
             "tipo": "CPU",
             "historial": {}
+        },
+        "cpu0007": {
+            "cod_campus": "cpu0007",
+            "cod_transaccion": "sfdfd",
+            "nro_formulario": "dfdf",
+            "nro_serial": "dfdf",
+            "name_activo": "dfdf",
+            "ubicacion_activo": "Juan Manuel",
+            "marca": "dfdf",
+            "categoria": "dfd",
+            "estado": "1",
+            "proveedor": "dfdf",
+            "valor": 2323,
+            "empresa_resp": "vcvc",
+            "tipo": "cvc",
+            "historial": {}
         }
     },
     "personal": {
@@ -261,7 +277,7 @@
             "nro_zona": "z002",
             "nombre_zona": "Artemis",
             "capacidad_zona": 32,
-            "ex_cpu": 0,
+            "ex_cpu": 2,
             "ex_mon": 0,
             "ex_mou": 0,
             "ex_tec": 0
@@ -270,7 +286,7 @@
             "nro_zona": "z003",
             "nombre_zona": "Sputnik",
             "capacidad_zona": 34,
-            "ex_cpu": 1,
+            "ex_cpu": 2,
             "ex_mon": 2,
             "ex_mou": 0,
             "ex_tec": 0
@@ -318,7 +334,9 @@
             "activos_asignados": [
                 "mou001",
                 "mon001",
-                "mou002"
+                "mou002",
+                "cpu0007",
+                "cpu0007"
             ]
         },
         "z003": {
@@ -329,7 +347,8 @@
                 "Sputnik"
             ],
             "activos_asignados": [
-                "mon003"
+                "mon003",
+                "cpu002"
             ]
         },
         "z004": {
