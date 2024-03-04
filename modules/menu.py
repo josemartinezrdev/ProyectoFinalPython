@@ -43,15 +43,15 @@ def create_menu():
     else:
         if opt == '1':
             nombre = 'ACTIVOS'
-            create_menu_apz(nombre, )
+            create_menu_apz(nombre)
             create_menu()
         elif opt == '2':
             nombre = 'PERSONAL'
-            create_menu_apz(nombre, )
+            create_menu_apz(nombre)
             create_menu()
         elif opt == '3':
             nombre = 'ZONAS'
-            create_menu_apz(nombre, )
+            create_menu_apz(nombre)
             create_menu()
         elif opt == '4':
             create_menu_asignar()
@@ -88,7 +88,7 @@ def create_menu_apz(nombre: str):
         print(f'La opción ({opt}) ingresada no es valida')
         pause_screen()
         clear_screen()
-        create_menu_apz(nombre, )
+        create_menu_apz(nombre)
     else:
         clear_screen()
         if opt == '1':
@@ -207,7 +207,7 @@ def create_menu_reportes():
         if opt == '2':
             report_list_category()
             create_menu_reportes()
-            
+
         if opt == '3':
             pass
 
