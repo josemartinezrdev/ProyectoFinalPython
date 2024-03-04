@@ -31,8 +31,7 @@ def validar_id():
                 if opcion == 's':
                         asignados.append(activo)
                         activo=validar_activo(asignados)
-                else: 
-                    if opcion == 'n':
+                elif opcion == 'n':
                         asignados.append(activo)
                         op = False
             else: 
@@ -157,10 +156,9 @@ def add_asignacion():
                     else: 
                         if asignados[i][:3] == 'tec':
                             inventario['zonas'][id]['ex_tec'] += 1
+    
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
-        print(asignados)
-        pause_screen()
     else:
         asignacion = {
             'fecha_asignacion': fecha_asignacion,
