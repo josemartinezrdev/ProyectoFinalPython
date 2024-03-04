@@ -215,5 +215,4 @@ def add_asignacion(code='', check=False):
     for idx in range(len(asignados)):
         inventario = history(fecha_asignacion, tipo, asignados[idx], id)
         update_file('inventario.json', inventario)
-    pause_screen()
 

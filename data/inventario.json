@@ -6,10 +6,10 @@
             "nro_formulario": "dsds",
             "nro_serial": "sdsd",
             "name_activo": "cpu0",
-            "ubicacion_activo": "Zona1",
+            "ubicacion_activo": "no_asignada",
             "marca": "dsds",
             "categoria": "ssd",
-            "estado": "1",
+            "estado": "0",
             "proveedor": "sds",
             "valor": 1111,
             "empresa_resp": "dfd",
@@ -43,7 +43,20 @@
             "valor": 11,
             "empresa_resp": "sdsd",
             "tipo": "sds",
-            "historial": {}
+            "historial": {
+                "1": {
+                    "id": 1,
+                    "fecha": "12345",
+                    "tipo": "1",
+                    "id_resp": "1212"
+                },
+                "2": {
+                    "id": 2,
+                    "fecha": "2345",
+                    "tipo": "retorno",
+                    "id_resp": "No aplica"
+                }
+            }
         },
         "tec001": {
             "cod_campus": "tec001",
@@ -112,7 +125,8 @@
                 "Sdsssss"
             ],
             "activos_asignados": [
-                "tec001"
+                "tec001",
+                "cpu001"
             ]
         },
         "z001": {
@@ -122,9 +136,7 @@
                 "z001",
                 "Zona1"
             ],
-            "activos_asignados": [
-                "cpu000"
-            ]
+            "activos_asignados": []
         }
     }
 }
