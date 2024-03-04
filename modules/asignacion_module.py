@@ -50,10 +50,9 @@ def validar_zona_asignada(code='', check=False):
     opcion_zona = input('Ingrese el número de la zona: ')
     opcion_zona = str(opcion_zona).zfill(3)
     opcion_zona = 'z' + opcion_zona
-    capacidad = inventario['zonas'][opcion_zona]['capacidad_zona']
     asignados = []
     if opcion_zona in inventario['zonas']:
-        
+        capacidad = inventario['zonas'][opcion_zona]['capacidad_zona']
         def validar_capacidad(code='', check=False): 
             global activo
             activo = validar_activo(asignados, code, check)
