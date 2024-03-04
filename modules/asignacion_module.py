@@ -15,14 +15,14 @@ def val_tipo_asignacion():
         tipo_asignacion = val_tipo_asignacion()
     return tipo_asignacion
 
-def validar_id():
+def validar_id(code=''):
     inventario = read_file('inventario.json')
     asignados = []
     id_persona = input('Ingrese el Id de la persona: ')
     if id_persona in inventario['personal']:
         nombre = inventario.get('personal').get(id_persona).get('name')
         print(nombre)
-        activo = validar_activo(asignados)
+        activo = validar_activo(asignados, code)
         op = True
         while op:
             list_opciones = ['s','n']                
@@ -46,7 +46,7 @@ def validar_id():
         clear_screen()
         validar_id()
 
-def validar_zona_asignada():
+def validar_zona_asignada(code=''):
     inventario = read_file('inventario.json')
     opcion_zona = input('Ingrese el número de la zona: ')
     opcion_zona = str(opcion_zona).zfill(3)
@@ -99,7 +99,7 @@ def validar_zona_asignada():
         clear_screen()
         return validar_zona_asignada()
 
-def validar_activo(asignados:list):
+def validar_activo(asignados:list, code=''):
     inventario = read_file('inventario.json')
     cod_campus = input('Ingrese el "Código Campus" del activo: ')
     if cod_campus not in asignados:
@@ -132,16 +132,18 @@ def validar_activo(asignados:list):
         print('El activo ya se encuentra asignado')
         return validar_activo(asignados)
 
-def add_asignacion():
+def add_asignacion(code='', check=False):
     inventario = read_file('inventario.json')
+    if check == True:
+        fecha_re = str(input('Ingrese la Fecha de la reasignación: '))
     fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
     tipo_asignacion = val_tipo_asignacion()
     if tipo_asignacion == 'Personal':
-        id_personas, asignados = validar_id()
+        id_personas, asignados = validar_id(code)
         id = id_personas
         nombre = inventario['personal'][id]['name']
     else:
-        opcion_zona, asignados = validar_zona_asignada()
+        opcion_zona, asignados = validar_zona_asignada(code)
         id = opcion_zona
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):

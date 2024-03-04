@@ -25,7 +25,7 @@
             "ubicacion_activo": "no_asignada",
             "marca": "COMPUMAX",
             "categoria": "Equipo de computo",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "COMPUMAX",
             "valor": 1000000,
             "empresa_resp": "Campuslands",
@@ -270,7 +270,7 @@
             "nro_zona": "z003",
             "nombre_zona": "Sputnik",
             "capacidad_zona": 34,
-            "ex_cpu": 1,
+            "ex_cpu": 2,
             "ex_mon": 2,
             "ex_mou": 0,
             "ex_tec": 0
@@ -326,7 +326,8 @@
                 "Sputnik"
             ],
             "activos_asignados": [
-                "mon003"
+                "mon003",
+                "cpu002"
             ]
         }
     }

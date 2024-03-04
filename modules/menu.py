@@ -18,10 +18,10 @@ def create_menu():
 
     # 1. ACTIVOS #¿ Jose
     # 2. PERSONAL #¿ Jose
-    # 3. ZONAS #¡ Danna
+    # 3. ZONAS #- Eliza
     # 4. ASIGNACIÓN DE ACTIVOS #- Eliza
-    # 5. REPORTES #- Eliza
-    # 6. MOVIMIENTOS DE ACTIVOS #¡ Danna
+    # 5. REPORTES #¡ Danna
+    # 6. MOVIMIENTOS DE ACTIVOS #¿ Jose
     # 7. SALIR #¿ Jose
 
     clear_screen()

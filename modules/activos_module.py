@@ -22,6 +22,7 @@ def add_activos():
         if nro_formulario in inventario.get('activos'):
             print('El número de formulario que tratas de ingresar ya existe')
             pause_screen()
+
         else:
 
             nro_serial = input('Ingrese el "Número Serial"\n-> ')
