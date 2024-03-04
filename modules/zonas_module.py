@@ -28,11 +28,11 @@ def validar_num_zona():
                     clear_screen()
                     validar_num_zona() 
                 for i in inventario['zonas']:
-                 if nombre_zona in inventario['zonas'][i]['nombre_zona']:
-                    print ('Nombre de zona ya registrado')
-                    pause_screen()
-                    clear_screen()
-                    validar_num_zona() 
+                    if nombre_zona in inventario['zonas'][i]['nombre_zona']:
+                        print ('Nombre de zona ya registrado')
+                        pause_screen()
+                        clear_screen()
+                        validar_num_zona() 
                     
     except ValueError:
         print('Dato inválido')
