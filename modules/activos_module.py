@@ -6,7 +6,10 @@ def add_activos():
 
     inventario = read_file('inventario.json')
 
-    cod_campus = input('Ingrese el "Código de Campus"\n-> ')
+    cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ')
+
+    # if cod_campus != 
+
     clear_screen()
 
     if cod_campus in inventario.get('activos'):
