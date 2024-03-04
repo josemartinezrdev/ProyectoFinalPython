@@ -1,28 +1,19 @@
 from modules.core_files import read_file, update_file, clear_screen, pause_screen
-
 # valida el tipo de asignaciones
 def val_tipo_asignacion():
-    try:
-        print('Ingrese el tipo de asignación que desea registrar: ')
-        print('1. Personal \n2. Zona')
-        opt = input('-')
-        if opt == '1':
-            tipo_asignacion = 'Personal'
-            return tipo_asignacion
-        elif opt =='2':
-            tipo_asignacion = 'Zona'
-            return tipo_asignacion
-        else:
-            print('Opción Incorrecta')
-            pause_screen()
-            clear_screen()
-            val_tipo_asignacion()
-    except ValueError:
+    print('Ingrese el tipo de asignación que desea registrar: ')
+    print('1. Personal \n2. Zona')
+    opt = input('-')
+    if opt == '1':
+        tipo_asignacion = 'Personal'
+    elif opt == '2':
+        tipo_asignacion = 'zona'
+    else:
         print('Opción Incorrecta')
         pause_screen()
         clear_screen()
-        val_tipo_asignacion()
-# valida el id de la persona que adquiere el activo (Falso positivo)
+        tipo_asignacion = val_tipo_asignacion()
+    return tipo_asignacion
 
 def validar_id():
     inventario = read_file('inventario.json')
@@ -39,7 +30,7 @@ def validar_id():
             if opcion in list_opciones:
                 if opcion == 's':
                         asignados.append(activo)
-                        activo = validar_activo(asignados)
+                        activo=validar_activo(asignados)
                 else: 
                     if opcion == 'n':
                         asignados.append(activo)
@@ -57,7 +48,6 @@ def validar_id():
 
 def validar_zona_asignada():
     inventario = read_file('inventario.json')
-    
     opcion_zona = input('Ingrese el número de la zona: ')
     opcion_zona = str(opcion_zona).zfill(3)
     opcion_zona = 'z' + opcion_zona

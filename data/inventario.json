@@ -6,10 +6,10 @@
             "nro_formulario": "3213",
             "nro_serial": "1332",
             "name_activo": "activo1",
-            "ubicacion_activo": "",
+            "ubicacion_activo": "Apolo",
             "marca": "csdf",
             "categoria": "mouse",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "zona",
             "valor": 52,
             "empresa_resp": "jgj",
@@ -22,10 +22,10 @@
             "nro_formulario": "646",
             "nro_serial": "6452",
             "name_activo": "activo2",
-            "ubicacion_activo": "Pepito Perez",
+            "ubicacion_activo": "Apolo",
             "marca": "compumax",
             "categoria": "mouse",
-            "estado": "1",
+            "estado": "0",
             "proveedor": "compumax",
             "valor": 8,
             "empresa_resp": "campus",
@@ -38,7 +38,7 @@
             "nro_formulario": "h146t5hy",
             "nro_serial": "h54t6",
             "name_activo": "teclado azul",
-            "ubicacion_activo": "Pepito Perez",
+            "ubicacion_activo": "Pedrito Mendez",
             "marca": "compda",
             "categoria": "teclado",
             "estado": "1",
@@ -54,7 +54,7 @@
             "nro_formulario": "4654",
             "nro_serial": "cdc4",
             "name_activo": "monitor 15pg",
-            "ubicacion_activo": "Apolo",
+            "ubicacion_activo": "Artemis",
             "marca": "compus",
             "categoria": "monitor",
             "estado": "1",
@@ -124,10 +124,28 @@
             "nro_zona": "z001",
             "nombre_zona": "Apolo",
             "capacidad_zona": 5,
-            "ex_cpu": 5,
+            "ex_cpu": 4,
             "ex_mon": 3,
+            "ex_mou": 4,
+            "ex_tec": 4
+        },
+        "z002": {
+            "nro_zona": "z002",
+            "nombre_zona": "Artemis",
+            "capacidad_zona": 20,
+            "ex_cpu": 2,
+            "ex_mon": 1,
             "ex_mou": 2,
-            "ex_tec": 3
+            "ex_tec": 1
+        },
+        "z004": {
+            "nro_zona": "z004",
+            "nombre_zona": "Spudfsd",
+            "capacidad_zona": 20,
+            "ex_cpu": 1,
+            "ex_mon": 0,
+            "ex_mou": 0,
+            "ex_tec": 1
         }
     },
     "asignaciones": {
@@ -141,10 +159,18 @@
                 "te001"
             ]
         },
-        "z001": {
-            "fecha_asignacion": "6545",
+        "PER002": {
+            "fecha_asignacion": "45",
+            "tipo_asignacion ": "Personal",
+            "asignado_a": "Pedrito mendez",
+            "activos_asignados": [
+                "te001"
+            ]
+        },
+        "z002": {
+            "fecha_asignacion": "8464",
             "tipo_asignacion ": "zona",
-            "asignado_a": "Apolo",
+            "asignado_a": "Artemis",
             "activos_asignados": [
                 "mon001"
             ]
