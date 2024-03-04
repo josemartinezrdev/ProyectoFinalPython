@@ -1,4 +1,5 @@
 from modules.core_files import read_file, update_file, clear_screen, pause_screen
+
 # valida el tipo de asignaciones
 def val_tipo_asignacion():
     try:
@@ -9,7 +10,7 @@ def val_tipo_asignacion():
             tipo_asignacion = 'Personal'
             return tipo_asignacion
         elif opt =='2':
-            tipo_asignacion = 'zona'
+            tipo_asignacion = 'Zona'
             return tipo_asignacion
         else:
             print('Opción Incorrecta')
@@ -56,6 +57,7 @@ def validar_id():
 
 def validar_zona_asignada():
     inventario = read_file('inventario.json')
+    
     opcion_zona = input('Ingrese el número de la zona: ')
     opcion_zona = str(opcion_zona).zfill(3)
     opcion_zona = 'z' + opcion_zona
@@ -148,13 +150,9 @@ def add_asignacion():
         id_personas, asignados = validar_id()
         id = id_personas
         nombre = inventario['personal'][id]['name']
-        for i in asignados:
-                inventario['activos'][i]['estado'] = '1'
     else:
         opcion_zona, asignados = validar_zona_asignada()
         id = opcion_zona
-        for i in asignados:
-            inventario['activos'][i]['estado'] = '1'
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):
             pause_screen()
@@ -169,7 +167,6 @@ def add_asignacion():
                     else: 
                         if asignados[i][:3] == 'tec':
                             inventario['zonas'][id]['ex_tec'] += 1
-
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
         print(asignados)

@@ -191,6 +191,22 @@
             "empresa_resp": "Campuslands",
             "tipo": "Teclado",
             "historial": {}
+        },
+        "123": {
+            "cod_campus": "123",
+            "cod_transaccion": "555",
+            "nro_formulario": "67",
+            "nro_serial": "12f",
+            "name_activo": "PC",
+            "ubicacion_activo": "no_asignada",
+            "marca": "Lenovo",
+            "categoria": "Equipo de computo",
+            "estado": "0",
+            "proveedor": "Federico",
+            "valor": 77,
+            "empresa_resp": "Campuslands",
+            "tipo": "CPU",
+            "historial": {}
         }
     },
     "personal": {
@@ -282,10 +298,7 @@
         "z001": {
             "fecha_asignacion": "02/02/24",
             "tipo_asignacion ": "zona",
-            "asignado_a": [
-                "z001",
-                "Apolo"
-            ],
+            "asignado_a": "Apolo",
             "activos_asignados": [
                 "tec001",
                 "tec002",
