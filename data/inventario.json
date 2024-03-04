@@ -6,10 +6,10 @@
             "nro_formulario": "dsds",
             "nro_serial": "sdsd",
             "name_activo": "cpu0",
-            "ubicacion_activo": "no_asignada",
+            "ubicacion_activo": "Zona1",
             "marca": "dsds",
             "categoria": "ssd",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "sds",
             "valor": 1111,
             "empresa_resp": "dfd",
@@ -17,13 +17,13 @@
             "historial": {
                 "1": {
                     "id": 1,
-                    "fecha": "1234",
+                    "fecha": "ds",
                     "tipo": "1",
                     "id_resp": "1212"
                 },
                 "2": {
                     "id": 2,
-                    "fecha": "1sdfdf",
+                    "fecha": "fdfs",
                     "tipo": "4",
                     "id_resp": "z001"
                 }
@@ -43,20 +43,7 @@
             "valor": 11,
             "empresa_resp": "sdsd",
             "tipo": "sds",
-            "historial": {
-                "1": {
-                    "id": 1,
-                    "fecha": "12345",
-                    "tipo": "1",
-                    "id_resp": "1212"
-                },
-                "2": {
-                    "id": 2,
-                    "fecha": "2345",
-                    "tipo": "retorno",
-                    "id_resp": "No aplica"
-                }
-            }
+            "historial": {}
         },
         "tec001": {
             "cod_campus": "tec001",
@@ -101,7 +88,7 @@
             "nro_zona": "z001",
             "nombre_zona": "Zona1",
             "capacidad_zona": 30,
-            "ex_cpu": 1,
+            "ex_cpu": 3,
             "ex_mon": 0,
             "ex_mou": 0,
             "ex_tec": 0
@@ -118,25 +105,24 @@
     },
     "asignaciones": {
         "1212": {
-            "fecha_asignacion": "1234",
+            "fecha_asignacion": "ds",
             "tipo_asignacion ": "Personal",
             "asignado_a": [
                 "1212",
                 "Sdsssss"
             ],
-            "activos_asignados": [
-                "tec001",
-                "cpu001"
-            ]
+            "activos_asignados": []
         },
         "z001": {
-            "fecha_asignacion": "1sdfdf",
+            "fecha_asignacion": "fdfs",
             "tipo_asignacion ": "zona",
             "asignado_a": [
                 "z001",
                 "Zona1"
             ],
-            "activos_asignados": []
+            "activos_asignados": [
+                "cpu000"
+            ]
         }
     }
 }
