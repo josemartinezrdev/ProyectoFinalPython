@@ -150,13 +150,9 @@ def add_asignacion():
         id_personas,asignados = validar_id()
         id = id_personas
         nombre = inventario['personal'][id]['name']
-        for i in asignados:
-                inventario['activos'][i]['estado'] = '1'
     else:
         opcion_zona,asignados = validar_zona_asignada()
         id = opcion_zona
-        for i in asignados:
-            inventario['activos'][i]['estado'] = '1'
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):
             if asignados[i][:2] == 'cp':
@@ -170,13 +166,17 @@ def add_asignacion():
                     else: 
                         if asignados[i][:2] == 'te':
                             inventario['zonas'][id]['ex_tec'] += 1
+    
+    for i in asignados:
+        inventario['activos'][i]['estado'] = '1'
+        inventario['activos'][i]['ubicacion_activo'] = nombre
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
     else:
         asignacion = {
             'fecha_asignacion': fecha_asignacion,
             'tipo_asignacion ': tipo_asignacion,
-            'asignado_a': [id, nombre.capitalize()],
+            'asignado_a':nombre.capitalize(),
             'activos_asignados':asignados
         }
         inventario.get('asignaciones').update({id: asignacion})

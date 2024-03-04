@@ -6,10 +6,10 @@
             "nro_formulario": "3213",
             "nro_serial": "1332",
             "name_activo": "activo1",
-            "ubicacion_activo": "no_asignada",
+            "ubicacion_activo": "",
             "marca": "csdf",
             "categoria": "mouse",
-            "estado": "1",
+            "estado": "0",
             "proveedor": "zona",
             "valor": 52,
             "empresa_resp": "jgj",
@@ -22,7 +22,7 @@
             "nro_formulario": "646",
             "nro_serial": "6452",
             "name_activo": "activo2",
-            "ubicacion_activo": "no_asignada",
+            "ubicacion_activo": "Pepito Perez",
             "marca": "compumax",
             "categoria": "mouse",
             "estado": "1",
@@ -38,7 +38,7 @@
             "nro_formulario": "h146t5hy",
             "nro_serial": "h54t6",
             "name_activo": "teclado azul",
-            "ubicacion_activo": "no_asignada",
+            "ubicacion_activo": "Pepito Perez",
             "marca": "compda",
             "categoria": "teclado",
             "estado": "1",
@@ -54,10 +54,10 @@
             "nro_formulario": "4654",
             "nro_serial": "cdc4",
             "name_activo": "monitor 15pg",
-            "ubicacion_activo": "no_asignada",
+            "ubicacion_activo": "Apolo",
             "marca": "compus",
             "categoria": "monitor",
-            "estado": "0",
+            "estado": "1",
             "proveedor": "cohdskhf",
             "valor": 50,
             "empresa_resp": "campus",
@@ -124,48 +124,29 @@
             "nro_zona": "z001",
             "nombre_zona": "Apolo",
             "capacidad_zona": 5,
-            "ex_cpu": 3,
-            "ex_mon": 2,
+            "ex_cpu": 5,
+            "ex_mon": 3,
             "ex_mou": 2,
             "ex_tec": 3
         }
     },
     "asignaciones": {
-        "PER002": {
-            "fecha_asignacion": "45121",
+        "PER001": {
+            "fecha_asignacion": "5432",
             "tipo_asignacion ": "Personal",
-            "asignado_a": [
-                "PER002",
-                "Pedrito mendez"
-            ],
+            "asignado_a": "Pepito perez",
             "activos_asignados": [
                 "cp001",
-                "cp001"
+                "mou001",
+                "te001"
             ]
         },
         "z001": {
-            "fecha_asignacion": "6465",
+            "fecha_asignacion": "6545",
             "tipo_asignacion ": "zona",
-            "asignado_a": [
-                "z001",
-                "Apolo"
-            ],
+            "asignado_a": "Apolo",
             "activos_asignados": [
-                "mou001",
                 "mon001"
-            ]
-        },
-        "PER001": {
-            "fecha_asignacion": "2",
-            "tipo_asignacion ": "Personal",
-            "asignado_a": [
-                "PER001",
-                "Pepito perez"
-            ],
-            "activos_asignados": [
-                "mou001",
-                "te001",
-                "cp001"
             ]
         }
     }
