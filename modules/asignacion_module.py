@@ -58,7 +58,7 @@ def validar_zona_asignada():
         def validar_capacidad(): 
             global activo
             activo = validar_activo(asignados)
-            if (activo[:2] == 'cp')and (inventario['zonas'][opcion_zona]['ex_cpu']) == capacidad:
+            if (activo[:3] == 'cpu') and (inventario['zonas'][opcion_zona]['ex_cpu']) == capacidad:
                 print(f'Lo sentimos, la Capacidad de la zona {opcion_zona} para CPU se encuentra llena')
                 validar_capacidad()
             else:
@@ -70,11 +70,11 @@ def validar_zona_asignada():
                         print(f'Lo sentimos, la Capacidad de la zona{opcion_zona} para Monitores se encuentra llena')
                         validar_capacidad()
                     else:
-                        if activo[:2] == 'te' and (inventario['zonas'][opcion_zona]['ex_tec']) == capacidad:
+                        if activo[:3] == 'tec' and (inventario['zonas'][opcion_zona]['ex_tec']) == capacidad:
                             print(f'Lo sentimos, la Capacidad de la zona{opcion_zona} para teclados se encuentra llena')
                             validar_capacidad()
         validar_capacidad()
-        global activo   
+        global activo 
         
         op = True
         while op:
@@ -101,17 +101,17 @@ def validar_zona_asignada():
 
 def validar_activo(asignados:list):
     inventario = read_file('inventario.json')
-    CodCampus = input('Ingrese el "Código Campus" del activo: ')
-    if CodCampus not in asignados:
-        if CodCampus not in inventario['activos']:
+    cod_campus = input('Ingrese el "Código Campus" del activo: ')
+    if cod_campus not in asignados:
+        if cod_campus not in inventario['activos']:
             print('El código ingresado no corresponde a ningún activo')
             pause_screen()
             clear_screen()
             return validar_activo(asignados)
         else:
-            estado = inventario['activos'][CodCampus]['estado']
+            estado = inventario['activos'][cod_campus]['estado']
             if estado == '0':
-                    return CodCampus
+                    return cod_campus
             else:
                 if estado == '1':
                     print('El activo ya se encuentra "Asignado"')
@@ -137,15 +137,16 @@ def add_asignacion():
     fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
     tipo_asignacion = val_tipo_asignacion()
     if tipo_asignacion == 'Personal':
-        id_personas,asignados = validar_id()
+        id_personas, asignados = validar_id()
         id = id_personas
         nombre = inventario['personal'][id]['name']
     else:
-        opcion_zona,asignados = validar_zona_asignada()
+        opcion_zona, asignados = validar_zona_asignada()
         id = opcion_zona
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):
-            if asignados[i][:2] == 'cp':
+            pause_screen()
+            if asignados[i][:3] == 'cpu':
                 inventario['zonas'][id]['ex_cpu'] += 1
             else:
                 if asignados[i][:3] == 'mon':
@@ -154,20 +155,19 @@ def add_asignacion():
                     if asignados[i][:3] == 'mou':
                         inventario['zonas'][id]['ex_mou'] += 1
                     else: 
-                        if asignados[i][:2] == 'te':
+                        if asignados[i][:3] == 'tec':
                             inventario['zonas'][id]['ex_tec'] += 1
-    
-    for i in asignados:
-        inventario['activos'][i]['estado'] = '1'
-        inventario['activos'][i]['ubicacion_activo'] = nombre
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
+        print(asignados)
+        pause_screen()
     else:
         asignacion = {
             'fecha_asignacion': fecha_asignacion,
             'tipo_asignacion ': tipo_asignacion,
-            'asignado_a':nombre.capitalize(),
-            'activos_asignados':asignados
+            'asignado_a': [id, nombre.capitalize()],
+            'activos_asignados': asignados
         }
-        inventario.get('asignaciones').update({id: asignacion})
+        inventario.get('asignaciones').update({id:asignacion})
+        update_file('inventario.json', inventario)
     update_file('inventario.json', inventario)
