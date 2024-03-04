@@ -8,9 +8,19 @@ def add_activos():
 
     cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ')
 
-    # if cod_campus != 
+    # cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ')
 
-    clear_screen()
+
+   
+    # valido = False
+    # for opcion in ('CPU', 'MON', 'MOU', 'TEC'):
+    #     if cod_campus[:3] == opcion:
+    #         valido = True
+    #         break
+
+    # if not valido:
+    #     print('Dato inválido\nDebes ingresar para :\n\tCPU -> CPU\n\tMonitor -> MON\n\tMouse -> MOU\n\tTeclado -> TEC\n¡Cualquiera acompañado de 1 a 3 números!')
+    #     clear_screen()
 
     if cod_campus in inventario.get('activos'):
         print('El código que tratas de ingresar ya existe')
@@ -25,6 +35,7 @@ def add_activos():
         if nro_formulario in inventario.get('activos'):
             print('El número de formulario que tratas de ingresar ya existe')
             pause_screen()
+
         else:
 
             nro_serial = input('Ingrese el "Número Serial"\n-> ')
