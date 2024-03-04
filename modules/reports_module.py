@@ -37,7 +37,26 @@ def report_baja_daños():
     clear_screen()
     inventario = read_file('inventario.json')
 
-    baja_daños = input('Ingrese el nombre de el activo: ')
+    activos_dados_de_baja = False
+
+    for key, value in inventario.get('activos').items():
+        for key2, value2 in value.items():
+            if key2 == 'estado' and value2 == '2':
+                print('ACTIVOS DADOS DE BAJA')
+                print(f'\n{key}:\n') 
+                for key3, value3 in value.items():
+                    if key3 == 'cod_campus':
+                        print(f'Código Campus: {value3}')
+                    if key3 == 'name_activo':
+                        print(f'Nombre Activo: {value3}')
+                activos_dados_de_baja = True
+
+    if not activos_dados_de_baja:
+        print('No hay activos dados de baja')
+                        
+    pause_screen()
+    clear_screen()
+
 
 
 def report_list_activ_asig():
@@ -54,3 +73,4 @@ def report_list_activ_asig():
             else:
                 print(f'    {key2}: {value2}')
     pause_screen()
+    clear_screen()

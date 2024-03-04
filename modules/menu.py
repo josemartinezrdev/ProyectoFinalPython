@@ -3,7 +3,7 @@ from modules.activos_module import add_activos
 from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
-from modules.reports_module import report_all_actives, report_list_category, report_list_activ_asig
+from modules.reports_module import report_all_actives, report_list_category, report_list_activ_asig, report_baja_daños
 from modules.movimientos_module import movimiento
 from modules.core_files import edit_file_apz, delete_data_apz, search_data_apza, pause_screen, clear_screen
 
@@ -12,7 +12,7 @@ def create_menu():
     clear_screen()
     title = """
 ++++++++++++++++++++++++++++++++++++
-+  SISTEMA DE G & C DE   +
++       SISTEMA DE G & C DE        +
 ++++++++++++++++++++++++++++++++++++
 """
 
@@ -208,7 +208,8 @@ def create_menu_reportes():
             create_menu_reportes()
 
         if opt == '3':
-            pass
+            report_baja_daños()
+            create_menu_reportes()
 
         if opt == '4':
             report_list_activ_asig()
