@@ -48,4 +48,3 @@ def movimiento(action):
                             inventario['activos'][act_return]['ubicacion_activo'] = 'no_asignada'
                             update_file('inventario.json', inventario)
                             add_asignacion(act_return, True)
-    update_file('inventario.json', inventario)

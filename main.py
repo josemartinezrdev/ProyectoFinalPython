@@ -1,5 +1,5 @@
 from modules.menu import create_menu
-from modules.core_files import check_file, read_file, clear_screen
+from modules.core_files import check_file, clear_screen
 
 inventario = {
     'activos': {},

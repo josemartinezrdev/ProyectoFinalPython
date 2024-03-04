@@ -50,10 +50,10 @@ def validar_zona_asignada(code='', check=False):
     opcion_zona = input('Ingrese el número de la zona: ')
     opcion_zona = str(opcion_zona).zfill(3)
     opcion_zona = 'z' + opcion_zona
-    capacidad = inventario['zonas'][opcion_zona]['capacidad_zona']
     asignados = []
+    
     if opcion_zona in inventario['zonas']:
-        
+        capacidad = inventario['zonas'][opcion_zona]['capacidad_zona']
         def validar_capacidad(code='', check=False): 
             global activo
             activo = validar_activo(asignados, code, check)
@@ -74,7 +74,8 @@ def validar_zona_asignada(code='', check=False):
                             validar_capacidad(code, check)
         validar_capacidad(code, check)
         global activo 
-        
+        print(activo)
+        pause_screen()
         op = True
         while op:
             list_opciones = ['s','n']                
@@ -104,6 +105,7 @@ def validar_activo(asignados:list, code='', check=False):
         cod_campus = code
     elif check == False:
         cod_campus = input('Ingrese el "Código Campus" del activo: ')
+
     if cod_campus not in asignados:
         if cod_campus not in inventario['activos']:
             print('El código ingresado no corresponde a ningún activo')
@@ -137,7 +139,7 @@ def validar_activo(asignados:list, code='', check=False):
 def add_asignacion(code='', check=False):
     inventario = read_file('inventario.json')
     if check == True:
-        fecha_re = str(input('Ingrese la Fecha de la reasignación: '))
+        fecha_asignacion = str(input('Ingrese la Fecha de la reasignación: '))
     elif check == False:
         fecha_asignacion = str(input('Ingrese la Fecha de la asignación: '))
     tipo_asignacion = val_tipo_asignacion()
@@ -147,10 +149,11 @@ def add_asignacion(code='', check=False):
         nombre = inventario['personal'][id]['name']
     else:
         opcion_zona, asignados = validar_zona_asignada(code, check)
+        print(opcion_zona, asignados)
+        pause_screen()
         id = opcion_zona
         nombre = inventario['zonas'][id]['nombre_zona']
         for i in range(len(asignados)):
-            pause_screen()
             if asignados[i][:3] == 'cpu':
                 inventario['zonas'][id]['ex_cpu'] += 1
             else:
@@ -178,5 +181,6 @@ def add_asignacion(code='', check=False):
             'activos_asignados': asignados
         }
         inventario.get('asignaciones').update({id:asignacion})
-        update_file('inventario.json', inventario)
+        # if len(inventario.get('asignaciones').get(id).get('activos_asignados')) == 0:
+        #     inventario.get('asignaciones').pop(id)
     update_file('inventario.json', inventario)
