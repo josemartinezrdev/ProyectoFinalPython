@@ -5,7 +5,7 @@ from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
 from modules.reports_module import report_all_actives, report_list_category, report_list_activ_asig
 from modules.movimientos_module import movimiento
-from modules.core_files import edit_file_apz, delete_data_apz, search_data_apza, pause_screen, clear_screen
+from modules.core_files import read_file, update_file, edit_file_apz, delete_data_apz, search_data_apza, pause_screen, clear_screen
 
 
 def create_menu():
