@@ -21,12 +21,17 @@ def validar_num_zona():
                 validar_num_zona()
             else: 
                 nombre_zona = input('Ingrese el nombre de la zona:\n-> ').capitalize()   
-                for nombre_zona in inventario['zonas']:
-                    if nombre_zona in inventario['zonas']:
+                for i in inventario['zonas']:
+                 if nombre_zona in inventario['zonas'][i]['nombre_zona']:
+                    print ('Nombre de zona ya registrado')
+                    pause_screen()
+                    clear_screen()
+                    validar_num_zona() 
+                    if nombre_zona in inventario['zonas'][i]['nombre_zona']:
                         print ('Nombre de zona ya registrado')
                         pause_screen()
                         clear_screen()
-                        validar_num_zona()
+                        validar_num_zona() 
                     
     except ValueError:
         print('Dato inválido')
