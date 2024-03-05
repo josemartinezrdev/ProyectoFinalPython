@@ -1,12 +1,14 @@
 from modules.core_files import read_file, update_file, clear_screen, pause_screen
+import re
 
 #AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
 def add_activos():
-
     inventario = read_file('inventario.json')
-
-    cod_campus = input('Ingrese el "Código de Campus"\n-> ')
+    
+    cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ')
+    
+    #     print('Dato inválido\nDebes ingresar para :\n\tCPU -> CPU\n\tMonitor -> MON\n\tMouse -> MOU\n\tTeclado -> TEC\n¡Cualquiera acompañado de 1 a 3 números!')
     clear_screen()
 
     if cod_campus in inventario.get('activos'):

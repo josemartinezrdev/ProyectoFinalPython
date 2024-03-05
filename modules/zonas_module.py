@@ -21,8 +21,8 @@ def validar_num_zona():
                 validar_num_zona()
             else: 
                 nombre_zona = input('Ingrese el nombre de la zona:\n-> ').capitalize()   
-                for i in inventario['zonas']:
-                    if nombre_zona in inventario['zonas'][i]['nombre_zona']:
+                for nombre_zona in inventario['zonas']:
+                    if nombre_zona in inventario['zonas']:
                         print ('Nombre de zona ya registrado')
                         pause_screen()
                         clear_screen()

@@ -1,5 +1,5 @@
 from modules.core_files import read_file, pause_screen, update_file
-from modules.asignacion_module import add_asignacion
+from modules.asignacion_module import add_asignacion, history    
 
 def movimiento(action):
 
@@ -19,6 +19,7 @@ def movimiento(action):
     inventario = read_file('inventario.json')
 
     if action != 're':
+        text = 'No aplica'
         fecha_movimiento = input('Ingrese la fecha del movimiento')
 
     act_return = input(msg)
@@ -26,10 +27,12 @@ def movimiento(action):
 
     if estado != '0':
 
-        inventario['activos'][act_return]['estado'] = state
-        # inventario['activos'][act_return]['ubicacion_activo'] = 'no_asignada'
-        
+        if action != 're':
+            inventario = history(fecha_movimiento, action, act_return, text)
 
+        inventario['activos'][act_return]['estado'] = state
+        update_file('inventario.json', inventario)
+        # inventario['activos'][act_return]['ubicacion_activo'] = 'no_asignada'
         if estado == '1':
             ubicacion = input('Ingrese el "ID" / "Número Zona" de la persona / zona en la cual se encuentra asignado el activo\n-> ')
 

@@ -1,0 +1,113 @@
+{
+    "activos": {
+        "cpu001": {
+            "cod_campus": "cpu001",
+            "cod_transaccion": "dfsdf",
+            "nro_formulario": "sfdsd",
+            "nro_serial": "sf",
+            "name_activo": "sf",
+            "ubicacion_activo": "no_asignada",
+            "marca": "f",
+            "categoria": "CPU",
+            "estado": "0",
+            "proveedor": "sdsd",
+            "valor": 565,
+            "empresa_resp": "sfs",
+            "tipo": "sd",
+            "historial": {
+                "1": {
+                    "id": 1,
+                    "fecha": "20/02/2024",
+                    "tipo": "1",
+                    "id_resp": "per001"
+                },
+                "2": {
+                    "id": 2,
+                    "fecha": "",
+                    "tipo": "4",
+                    "id_resp": "z001"
+                }
+            }
+        },
+        "mon001": {
+            "cod_campus": "mon001",
+            "cod_transaccion": "ds",
+            "nro_formulario": "sd",
+            "nro_serial": "sd",
+            "name_activo": "sd",
+            "ubicacion_activo": "no_asignada",
+            "marca": "sd",
+            "categoria": "sd",
+            "estado": "0",
+            "proveedor": "sd",
+            "valor": 52,
+            "empresa_resp": "sd",
+            "tipo": "sd",
+            "historial": {
+                "1": {
+                    "id": 1,
+                    "fecha": "4545",
+                    "tipo": "1",
+                    "id_resp": "per001"
+                },
+                "2": {
+                    "id": 2,
+                    "fecha": "sd",
+                    "tipo": "4",
+                    "id_resp": "z001"
+                },
+                "3": {
+                    "id": 3,
+                    "fecha": "dssd",
+                    "tipo": "4",
+                    "id_resp": "per001"
+                }
+            }
+        }
+    },
+    "personal": {
+        "per001": {
+            "id": "per001",
+            "tipo": "Natural",
+            "name": "juan",
+            "email": "sdfs",
+            "telefonos": {
+                "tel_movil": "No aplica",
+                "tel_casa": "No aplica",
+                "tel_personal": "No aplica",
+                "tel_oficina": "No aplica"
+            }
+        }
+    },
+    "zonas": {
+        "z001": {
+            "nro_zona": "z001",
+            "nombre_zona": "Apolo",
+            "capacidad_zona": 20,
+            "ex_cpu": 1,
+            "ex_mon": 2,
+            "ex_mou": 0,
+            "ex_tec": 0
+        }
+    },
+    "asignaciones": {
+        "per001": {
+            "fecha_asignacion": "20/02/2024",
+            "tipo_asignacion ": "Personal",
+            "asignado_a": [
+                "per001",
+                "Juan"
+            ],
+            "activos_asignados": []
+        },
+        "z001": {
+            "fecha_asignacion": "",
+            "tipo_asignacion ": "zona",
+            "asignado_a": [
+                "z001",
+                "Apolo"
+            ],
+            "activos_asignados": []
+        }
+    }
+}

@@ -3,7 +3,7 @@ from modules.activos_module import add_activos
 from modules.personas_module import add_personas
 from modules.zonas_module import add_zonas
 from modules.asignacion_module import add_asignacion
-from modules.reports_module import report_all_actives, report_list_category, report_list_activ_asig
+from modules.reports_module import report_all_actives, report_list_category, report_list_activ_asig, report_baja_daños
 from modules.movimientos_module import movimiento
 from modules.core_files import read_file, update_file, edit_file_apz, delete_data_apz, search_data_apza, pause_screen, clear_screen
 
@@ -12,7 +12,7 @@ def create_menu():
     clear_screen()
     title = """
 ++++++++++++++++++++++++++++++++++++
-+  SISTEMA DE G & C DE   +
++       SISTEMA DE G & C DE        +
 ++++++++++++++++++++++++++++++++++++
 """
 
@@ -180,13 +180,13 @@ def create_menu_reportes():
     +       MENÚ REPORTES    +
     ++++++++++++++++++++++++++
     """
-    options = ['1', '2', '3', '4', '5']
+    options = ['1', '2', '3', '4', '5','6']
 
     print(title)
 
     opts = (['1', 'LISTAR TODOS LOS ACTIVOS'], ['2', 'LISTAR ACTIVOS POR CATEGORIA'],
             ['3', 'LISTAR ACTIVOS DADOS DE BAJA POR DAÑO'], ['4', 'LISTAR ACTIVOS Y ASIGNACION'],
-            ['5', 'REGRESAR AL MENU PRINCIPAL'])
+            ['5', 'LISTAR HISTORIAL DE MOVIMIENTO DE ACTIVO'],['6', 'REGRESAR AL MENU PRINCIPAL'])
     print(tabulate(opts, tablefmt='grid'))
 
     opt = input('Ingrese la opción:\n-> ')
@@ -206,9 +206,10 @@ def create_menu_reportes():
         if opt == '2':
             report_list_category()
             create_menu_reportes()
-            
+
         if opt == '3':
-            pass
+            report_baja_daños()
+            create_menu_reportes()
 
         if opt == '4':
             report_list_activ_asig()
