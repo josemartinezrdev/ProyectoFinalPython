@@ -2,6 +2,8 @@ from modules.core_files import read_file, update_file, clear_screen, pause_scree
 
 def add_personas():
 
+    clear_screen()
+
     inventario = read_file('inventario.json')
 
 
@@ -20,6 +22,7 @@ def add_personas():
             tipo = "Juridica"
         else:
             print(f'La opción "{opt}" no es valida solo se acepta 1 ó 2')
+            pause_screen()
             add_personas()
         clear_screen()
         name = input('Ingrese nombre del empleado\n-> ')
@@ -63,3 +66,4 @@ def add_personas():
 
         inventario.get('personal').update({id:persona})
         update_file('inventario.json', inventario)
+        return

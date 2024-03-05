@@ -63,7 +63,7 @@ def edit_file_apz(nombre):
             data = inventario[nombre.lower()][palabra]
 
             for key, value in data.items():
-                if key not in ['cod_campus', 'nro_formulario', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec', 'ubicacion_activo']:
+                if key not in ['cod_campus', 'nro_formulario', 'categoria', 'estado', 'id', 'nro_zona', 'ex_cpu', 'ex_mon', 'ex_mou', 'ex_tec', 'ubicacion_activo']:
                     if type(data[key]) == dict:
                         if (type(data[key]) == dict):
                             for key2 in data[key].keys():
@@ -105,17 +105,41 @@ def delete_data_apz(nombre):
     delete_value = input(msg)
 
     if delete_value not in inventario[nombre.lower()]:
-        global count
-        count += 1
-        print(f'El dato que ingresó no esta registrado | Intento {count}/3')
-        pause_screen()
-        if count > 2:
-            count = 0
-            return
-        delete_data_apz(nombre)
+            global count
+            count += 1
+            print(f'El dato que ingresó no esta registrado | Intento {count}/3')
+            pause_screen()
+            if count > 2:
+                count = 0
+                return
+            delete_data_apz(nombre)
     else:
-        inventario[nombre.lower()].pop(delete_value)
-        update_file('inventario.json', inventario)
+        
+        if (nombre == 'ACTIVOS'):
+            for key, value in inventario['asignaciones'].items():
+                for key2, value2 in value.items():
+                    if key2 == 'activos_asignados':
+                        for i, item in enumerate(value[key2]):
+                            if item == delete_value:
+                                print('El activo no se puede eliminar, porque se encuentra asignado')
+                                pause_screen()
+                                return
+                        inventario[nombre.lower()].pop(delete_value)
+                        update_file('inventario.json', inventario)
+                        return
+                            
+        if delete_value in inventario.get('asignaciones'):
+            lng = len(inventario.get('asignaciones').get(delete_value).get('activos_asignados'))
+        else:
+            lng = 0
+
+        if (nombre == 'PERSONAL' or nombre == 'ZONAS') and (lng == 0):
+            inventario[nombre.lower()].pop(delete_value)
+            update_file('inventario.json', inventario)
+        else:
+            print('No se pudo eliminar pues tiene elementos asignados')
+            pause_screen()
+            return
 
 
 def search_data_apza(nombre):
