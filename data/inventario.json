@@ -7857,53 +7857,7 @@
             "historial": "-"
         }
     },
-    "personal": {
-        "000": {
-            "id": "000",
-            "tipo": "Juridica",
-            "name": "ssdsdsdd",
-            "email": "sdsdsd",
-            "telefonos": {
-                "tel_movil": "No aplica",
-                "tel_casa": "No aplica",
-                "tel_personal": "12212",
-                "tel_oficina": "121221"
-            }
-        }
-    },
-    "zonas": {
-        "z001": {
-            "nro_zona": "z001",
-            "nombre_zona": "Zona1",
-            "capacidad_zona": 33,
-            "ex_cpu": 0,
-            "ex_mon": 2,
-            "ex_mou": 0,
-            "ex_tec": 0
-        },
-        "z003": {
-            "nro_zona": "z003",
-            "nombre_zona": "Sfsdf",
-            "capacidad_zona": 20,
-            "ex_cpu": 0,
-            "ex_mon": 0,
-            "ex_mou": 0,
-            "ex_tec": 0
-        }
-    },
-    "asignaciones": {
-        "000": {
-            "fecha_asignacion": "12345",
-            "tipo_asignacion ": "Personal",
-            "asignado_a": [
-                "000",
-                "Ssdsdsdd"
-            ],
-            "activos_asignados": [
-                "cpu000",
-                "cpu001",
-                "mon001"
-            ]
-        }
-    }
+    "personal": {},
+    "zonas": {},
+    "asignaciones": {}
 }
