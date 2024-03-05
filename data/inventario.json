@@ -108,6 +108,38 @@
                     "id_resp": "000"
                 }
             }
+        },
+        "cpu008": {
+            "cod_campus": "cpu008",
+            "cod_transaccion": "3",
+            "nro_formulario": "3",
+            "nro_serial": "3",
+            "name_activo": "F",
+            "ubicacion_activo": "no_asignada",
+            "marca": "F",
+            "categoria": "Equipo de computo",
+            "estado": "0",
+            "proveedor": "F",
+            "valor": 4,
+            "empresa_resp": "F",
+            "tipo": "cpu",
+            "historial": {}
+        },
+        "mou009": {
+            "cod_campus": "mou009",
+            "cod_transaccion": "5",
+            "nro_formulario": "5",
+            "nro_serial": "5",
+            "name_activo": "5",
+            "ubicacion_activo": "no_asignada",
+            "marca": "g",
+            "categoria": "Equipo de computo",
+            "estado": "0",
+            "proveedor": "g",
+            "valor": 5,
+            "empresa_resp": "4",
+            "tipo": "mou",
+            "historial": {}
         }
     },
     "personal": {
@@ -121,6 +153,30 @@
                 "tel_casa": "No aplica",
                 "tel_personal": "12212",
                 "tel_oficina": "121221"
+            }
+        },
+        "ddd": {
+            "id": "ddd",
+            "tipo": "Natural",
+            "name": "df",
+            "email": "df",
+            "telefonos": {
+                "tel_movil": "34",
+                "tel_casa": "ddd",
+                "tel_personal": "No aplica",
+                "tel_oficina": "No aplica"
+            }
+        },
+        "3": {
+            "id": "3",
+            "tipo": "Natural",
+            "name": "d",
+            "email": "d",
+            "telefonos": {
+                "tel_movil": "34",
+                "tel_casa": "No aplica",
+                "tel_personal": "No aplica",
+                "tel_oficina": "No aplica"
             }
         }
     },
