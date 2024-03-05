@@ -26,7 +26,7 @@ def validar_num_zona():
                         print ('Nombre de zona ya registrado')
                         pause_screen()
                         clear_screen()
-                        validar_num_zona() 
+                        validar_num_zona()
                     
     except ValueError:
         print('Dato inválido')

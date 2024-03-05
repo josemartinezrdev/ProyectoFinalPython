@@ -1,113 +1,153 @@
 {
     "activos": {
-        "cpu001": {
-            "cod_campus": "cpu001",
-            "cod_transaccion": "dfsdf",
-            "nro_formulario": "sfdsd",
-            "nro_serial": "sf",
-            "name_activo": "sf",
-            "ubicacion_activo": "no_asignada",
-            "marca": "f",
-            "categoria": "CPU",
-            "estado": "0",
-            "proveedor": "sdsd",
-            "valor": 565,
-            "empresa_resp": "sfs",
-            "tipo": "sd",
+        "cpu000": {
+            "cod_campus": "cpu000",
+            "cod_transaccion": "2345",
+            "nro_formulario": "21345",
+            "nro_serial": "2345",
+            "name_activo": "activo1",
+            "ubicacion_activo": "ssdsdsdd",
+            "marca": "asdfg",
+            "categoria": "Equipo de computo",
+            "estado": "3",
+            "proveedor": "asdfg",
+            "valor": 234,
+            "empresa_resp": "fgh",
+            "tipo": "cpu",
             "historial": {
                 "1": {
                     "id": 1,
-                    "fecha": "20/02/2024",
+                    "fecha": "12345",
                     "tipo": "1",
-                    "id_resp": "per001"
+                    "id_resp": "000"
                 },
                 "2": {
                     "id": 2,
-                    "fecha": "",
-                    "tipo": "4",
-                    "id_resp": "z001"
+                    "fecha": "1212322",
+                    "tipo": "3",
+                    "id_resp": "No aplica"
                 }
             }
         },
-        "mon001": {
-            "cod_campus": "mon001",
-            "cod_transaccion": "ds",
-            "nro_formulario": "sd",
-            "nro_serial": "sd",
-            "name_activo": "sd",
-            "ubicacion_activo": "no_asignada",
-            "marca": "sd",
-            "categoria": "sd",
-            "estado": "0",
-            "proveedor": "sd",
-            "valor": 52,
-            "empresa_resp": "sd",
-            "tipo": "sd",
+        "cpu001": {
+            "cod_campus": "cpu001",
+            "cod_transaccion": "1234",
+            "nro_formulario": "234",
+            "nro_serial": "232456",
+            "name_activo": "activo2",
+            "ubicacion_activo": "ssdsdsdd",
+            "marca": "asdf",
+            "categoria": "Equipo de computo",
+            "estado": "1",
+            "proveedor": "asdfg",
+            "valor": 1234,
+            "empresa_resp": "asdfgh",
+            "tipo": "cpu",
             "historial": {
                 "1": {
                     "id": 1,
-                    "fecha": "4545",
+                    "fecha": "123456",
                     "tipo": "1",
-                    "id_resp": "per001"
+                    "id_resp": "000"
+                }
+            }
+        },
+        "mon000": {
+            "cod_campus": "mon000",
+            "cod_transaccion": "12345",
+            "nro_formulario": "12345",
+            "nro_serial": "2345",
+            "name_activo": "monitor1",
+            "ubicacion_activo": "no_asignada",
+            "marca": "asdfg",
+            "categoria": "Equipo de computo",
+            "estado": "0",
+            "proveedor": "sdfgh",
+            "valor": 123,
+            "empresa_resp": "sdf",
+            "tipo": "monitor",
+            "historial": {}
+        },
+        "mon001": {
+            "cod_campus": "mon001",
+            "cod_transaccion": "345",
+            "nro_formulario": "23456",
+            "nro_serial": "3456",
+            "name_activo": "monitor2",
+            "ubicacion_activo": "ssdsdsdd",
+            "marca": "asdfg",
+            "categoria": "Equipo de computo",
+            "estado": "1",
+            "proveedor": "sdfgh",
+            "valor": 123,
+            "empresa_resp": "sdfgh",
+            "tipo": "monitor",
+            "historial": {
+                "1": {
+                    "id": 1,
+                    "fecha": "wwef",
+                    "tipo": "1",
+                    "id_resp": "z001"
                 },
                 "2": {
                     "id": 2,
-                    "fecha": "sd",
+                    "fecha": "4yt",
                     "tipo": "4",
-                    "id_resp": "z001"
+                    "id_resp": "000"
                 },
                 "3": {
                     "id": 3,
-                    "fecha": "dssd",
+                    "fecha": "dfsf",
                     "tipo": "4",
-                    "id_resp": "per001"
+                    "id_resp": "z001"
+                },
+                "4": {
+                    "id": 4,
+                    "fecha": "grf",
+                    "tipo": "4",
+                    "id_resp": "000"
                 }
             }
         }
     },
     "personal": {
-        "per001": {
-            "id": "per001",
-            "tipo": "Natural",
-            "name": "juan",
-            "email": "sdfs",
+        "000": {
+            "id": "000",
+            "tipo": "Juridica",
+            "name": "ssdsdsdd",
+            "email": "sdsdsd",
             "telefonos": {
                 "tel_movil": "No aplica",
                 "tel_casa": "No aplica",
-                "tel_personal": "No aplica",
-                "tel_oficina": "No aplica"
+                "tel_personal": "12212",
+                "tel_oficina": "121221"
             }
         }
     },
     "zonas": {
         "z001": {
             "nro_zona": "z001",
-            "nombre_zona": "Apolo",
-            "capacidad_zona": 20,
-            "ex_cpu": 1,
+            "nombre_zona": "Zona1",
+            "capacidad_zona": 33,
+            "ex_cpu": 0,
             "ex_mon": 2,
             "ex_mou": 0,
             "ex_tec": 0
         }
     },
     "asignaciones": {
-        "per001": {
-            "fecha_asignacion": "20/02/2024",
+        "000": {
+            "fecha_asignacion": "12345",
             "tipo_asignacion ": "Personal",
             "asignado_a": [
-                "per001",
-                "Juan"
+                "000",
+                "Ssdsdsdd"
             ],
-            "activos_asignados": []
-        },
-        "z001": {
-            "fecha_asignacion": "",
-            "tipo_asignacion ": "zona",
-            "asignado_a": [
-                "z001",
-                "Apolo"
-            ],
-            "activos_asignados": []
+            "activos_asignados": [
+                "cpu000",
+                "cpu001",
+                "mon001"
+            ]
         }
     }
 }

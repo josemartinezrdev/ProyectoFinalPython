@@ -197,19 +197,14 @@ def add_asignacion(code='', check=False):
     for i in asignados:
         inventario['activos'][i]['estado'] = '1'
         inventario['activos'][i]['ubicacion_activo'] = nombre
-        
-        
 
     if id in inventario['asignaciones']:
         inventario['asignaciones'][id]['activos_asignados'].extend(asignados)
-        # if len(inventario['asignaciones'][i]['activos_asignados']) == 0:
-        #     del inventario['asignaciones'][i]
-        # pause_screen()
     else:
         asignacion = {
             'fecha_asignacion': fecha_asignacion,
             'tipo_asignacion ': tipo_asignacion,
-            'asignado_a': [id, nombre.capitalize()],
+            'asignado_a': nombre.capitalize(),
             'activos_asignados': asignados
         }
         inventario.get('asignaciones').update({id:asignacion})
@@ -218,4 +213,16 @@ def add_asignacion(code='', check=False):
     for idx in range(len(asignados)):
         inventario = history(fecha_asignacion, tipo, asignados[idx], id)
         update_file('inventario.json', inventario)
+    del_asig_vacias()
+
+def del_asig_vacias() :
+    inventario = read_file('inventario.json')
+    claves_a_eliminar = []
+    for clave, asignacion in inventario['asignaciones'].items():
+        if not asignacion['activos_asignados']:
+            claves_a_eliminar.append(clave)
+    for clave in claves_a_eliminar:
+        del inventario['asignaciones'][clave]
+    update_file('inventario.json', inventario)
+
 

@@ -99,7 +99,6 @@ def report_baja_daños():
     clear_screen()
 
 
-
 def report_list_activ_asig():
     clear_screen()
     inventario = read_file('inventario.json')
@@ -111,9 +110,9 @@ def report_list_activ_asig():
         for key2, value2 in value.items():
             if isinstance(value2, dict):
                 for key3, value3 in value2.items():
-                    sublist.append(f'{key3}: {value3}')
+                    sublist.append(f'{value3}')
             else:
-                sublist.append(f'{key2}: {value2}')
+                sublist.append(f'{value2}')
         listita.append(sublist)
 
     if listita:
@@ -122,7 +121,7 @@ def report_list_activ_asig():
         for idx in range(total_pag):
             clear_screen()
             data = listita[idx * pag: (idx + 1) * pag]
-            print(tabulate(data, headers=['ID', 'FECHA','TIPO','ASIGNACION', 'DETALLE'], tablefmt='fancy_grid'))
+            print(tabulate(data, headers=['ID','FECHA','TIPO','Asignación','Detalle'], tablefmt='fancy_grid'))
             print(f'Pagina {idx + 1} de {total_pag}')
             
     else:
