@@ -1,4 +1,5 @@
 from modules.core_files import read_file, update_file, clear_screen, pause_screen
+import re
 
 #AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
