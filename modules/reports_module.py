@@ -1,19 +1,52 @@
 from modules.core_files import read_file, clear_screen, pause_screen
 import os
+from tabulate import tabulate
 
 def report_all_actives():
     inventario = read_file('inventario.json')
+    
+    listita = []
+    
+    for i in inventario['activos'].items():
+        codigo = i[0]
+        nro_serial = inventario['activos'][i[0]]['nro_serial']
+        nombre = inventario['activos'][i[0]]['cod_campus']
+        sublist = [codigo,nro_serial,nombre]
+        listita.append(sublist)
 
-    for key, value in (inventario.get('activos')).items():
-        print(f'{key}:')
-        for key2, value2 in value.items():
-            if type(value2) == dict:
-                print(f'    {key2}:')
-                for key3, value3 in value2.items():
-                    print(f'        {key3}: {value3}') 
-            else:
-                print(f'    {key2}: {value2}')
-    pause_screen()
+        if listita:
+            print(tabulate(listita,headers = ["CodCampus", "Nombre", "Nro Serial"], tablefmt = 'fancy_grid'))
+            
+        else:
+            print('No hay activos en la categoría')
+            pause_screen()
+
+    if listita:
+            pag = 30
+            total_pag = (len(listita) - 1) // pag + 1
+            for idx in range(total_pag):
+                clear_screen()
+                data = listita[idx * pag: (idx + 1) * pag ]
+                print(tabulate(data, headers = ['Codigo', 'Nombre', 'Nro Serial'], tablefmt = 'fancy_grid'))
+                print(f'Pagina {idx + 1} de {total_pag}')
+                pause_screen()
+                clear_screen()
+
+    else:
+        print(f'No hay activos registrados')
+        pause_screen()
+        clear_screen()
+
+    # for key, value in (inventario.get('activos')).items():
+    #     print(f'{key}:')
+    #     for key2, value2 in value.items():
+    #         if type(value2) == dict:
+    #             print(f'    {key2}:')
+    #             for key3, value3 in value2.items():
+    #                 print(f'        {key3}: {value3}') 
+    #         else:
+    #             print(f'    {key2}: {value2}')
+    # pause_screen()
 
 def report_list_category():
     clear_screen()
