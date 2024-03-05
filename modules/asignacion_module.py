@@ -211,14 +211,10 @@ def add_asignacion(code='', check=False):
         # if len(inventario.get('asignaciones').get(id).get('activos_asignados')) == 0:
         #     inventario.get('asignaciones').pop(id)
     
-    print(inventario,'1')
-
     update_file('inventario.json', inventario)
-    print(inventario,'2')
 
     for idx in range(len(asignados)):
         inventario = history(fecha_asignacion, tipo, asignados[idx], id)
         update_file('inventario.json', inventario)
-    print(inventario,'3')
     pause_screen()
 

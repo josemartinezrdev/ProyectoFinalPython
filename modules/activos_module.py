@@ -4,16 +4,45 @@ import re
 #AÑADIR HISTORIAL CUANDO ESTÉ ASIGNACIÓN
 
 def add_activos():
-    inventario = read_file('inventario.json')
-    
-    cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ')
-    
-    #     print('Dato inválido\nDebes ingresar para :\n\tCPU -> CPU\n\tMonitor -> MON\n\tMouse -> MOU\n\tTeclado -> TEC\n¡Cualquiera acompañado de 1 a 3 números!')
+
     clear_screen()
+    inventario = read_file('inventario.json')
+
+    instrucciones = """
+
+    1. El código campus debe tener al principio:
+
+    - "cpu" antes del id (cpu123)
+    - "mon" antes del id (mon123)
+    - "mou" antes del id (mou123)
+    - "tec" antes del id (tec123)
+
+    2. Al ingresar el tipo de los activos:
+
+    - CPU
+    - Monitor
+    - Mouse
+    - Teclado
+    
+    No se pueden añadir más tipos de activos.
+
+    """
+
+    print(instrucciones)
+    opt_tipos = ['cpu', 'mon', 'mou', 'tec', 'monitor', 'mouse', 'teclado']
+
+    cod_campus = input('Ingrese el "Código de Campus del activo"\n-> ').lower()
+    clear_screen()
+
+    if cod_campus[:3] not in opt_tipos:
+        print('Verifica las instrucciones')
+        pause_screen()
+        add_activos()
 
     if cod_campus in inventario.get('activos'):
         print('El código que tratas de ingresar ya existe')
         pause_screen()
+        add_activos()
     else:
         cod_transaccion = input('Ingrese el "Código de Transacción"\n-> ')
         clear_screen()
@@ -36,8 +65,6 @@ def add_activos():
 
             marca = input('Ingrese la "Marca"\n-> ')
             clear_screen()
-            categoria = input('Ingrese la "Categoría"\n(Equipo de computo, Electrodomestico, Juego)\n-> ')
-            clear_screen()
             # , Estado
 
             proveedor = input('Ingrese el "Nombre del Proveedor" del activo\n-> ')
@@ -57,26 +84,30 @@ def add_activos():
                     clear_screen()
                     empresa_resp = input('Ingrese la "Empresa Responsable" del activo\n-> ')
                     clear_screen()
-                    tipo = input('Ingrese el "Tipo" de activo\n(Monitor, CPU, Teclado, Mouse,Aire Acondicionado,Portatil,Impresora)\n-> ')
+                    tipo = input('Ingrese el "Tipo" de activo)\n-> ').lower()
+                    if tipo not in opt_tipos:
+                        print('Revisa las instrucciones')
+                        add_activos()
+                    else:
 
-                activo = {
-                    'cod_campus': cod_campus,
-                    'cod_transaccion': cod_transaccion,
-                    'nro_formulario': nro_formulario,
-                    'nro_serial': nro_serial,
-                    'name_activo': name_activo,
-                    'ubicacion_activo': 'no_asignada',
-                    'marca': marca,
-                    'categoria': categoria,
-                    'estado': '0',
-                    'proveedor': proveedor,
-                    'valor': valor,
-                    'empresa_resp': empresa_resp,
-                    'tipo': tipo,
-                    'historial': {}
-                }
+                        activo = {
+                            'cod_campus': cod_campus,
+                            'cod_transaccion': cod_transaccion,
+                            'nro_formulario': nro_formulario,
+                            'nro_serial': nro_serial,
+                            'name_activo': name_activo,
+                            'ubicacion_activo': 'no_asignada',
+                            'marca': marca,
+                            'categoria': 'Equipo de computo',
+                            'estado': '0',
+                            'proveedor': proveedor,
+                            'valor': valor,
+                            'empresa_resp': empresa_resp,
+                            'tipo': tipo,
+                            'historial': {}
+                        }
 
-                inventario.get('activos').update({cod_campus: activo}) 
-                update_file('inventario.json', inventario)
+                        inventario.get('activos').update({cod_campus: activo}) 
+                        update_file('inventario.json', inventario)
 
-                return True
+                        return True
